@@ -1267,6 +1267,24 @@ async function loadAjustes() {
     }
 }
 
+// Escutador de eventos para a tecla Enter
+document.addEventListener('keydown', function(event) {
+    // Verifica se a tecla pressionada foi Enter
+    if (event.key === 'Enter') {
+        const viewLogin = document.getElementById('view-login');
+        
+        // Só executa se a tela de login NÃO estiver escondida
+        if (viewLogin && !viewLogin.classList.contains('hidden')) {
+            
+            // Opcional: Evita que o Enter mude o foco ou envie formulários nativos
+            event.preventDefault(); 
+            
+            // Chama a sua função de login
+            handleLogin();
+        }
+    }
+});
+
 // --- 2. SISTEMA DE LOGIN E LOGOUT ---
 async function handleLogin() {
     const btnSubmit = document.getElementById('btn-login-submit');
