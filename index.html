@@ -2946,10 +2946,9 @@ async function loadServidoresList() {
     const tbody = document.getElementById('table-servidores-body');
     if (!tbody) return;
 
-    tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-10 text-center text-slate-400 italic"><i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Atualizando saldos...</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-slate-400 italic"><i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Atualizando saldos...</td></tr>`;
 
     try {
-        // 1. Buscamos os servidores e as transações que impactam o saldo simultaneamente
         const [resServidores, resTransacoes] = await Promise.all([
             _supabase.from('servidores').select('*').order('nome'),
             _supabase.from('transacoes')
@@ -2964,8 +2963,6 @@ async function loadServidoresList() {
         const servidores = resServidores.data;
         const transacoes = resTransacoes.data;
 
-        // 2. Mapeamos o total gasto por cartão para facilitar o cálculo
-        // Criamos um objeto onde a chave é o número do cartão e o valor é a soma dos gastos
         const gastosPorCartao = transacoes.reduce((acc, t) => {
             const cartao = t.servidor_cartao;
             acc[cartao] = (acc[cartao] || 0) + (parseFloat(t.valor) || 0);
@@ -2976,58 +2973,81 @@ async function loadServidoresList() {
         tbody.innerHTML = '';
 
         if (!servidores || servidores.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-slate-400">Nenhum servidor encontrado no banco.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-slate-400">Nenhum servidor encontrado.</td></tr>`;
             return;
         }
 
         servidores.forEach(s => {
-            // 3. CÁLCULO DINÂMICO DO SALDO
             const limite = parseFloat(s.limite || 0);
             const gastoTotal = gastosPorCartao[s.cartao] || 0;
             const saldoReal = limite - gastoTotal;
-            
             const img = s.imagem_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(s.nome)}&background=random`;
 
+            // Lógica do Toggle: verde se true, cinza se false
+            const isFisico = s.cartaoFisico === true;
+
             tbody.innerHTML += `
-                <tr class="hover:bg-slate-50/50 transition-colors border-b border-slate-100 last:border-0">
-                    <td class="px-6 py-4 font-mono font-bold text-blue-600">#${s.id}</td>
-                    <td class="px-6 py-4">
-                        <div class="flex items-center gap-3">
-                            <img src="${img}" class="w-8 h-8 rounded-full object-cover border border-slate-200" onerror="this.src='https://ui-avatars.com/api/?name=User'">
-                            <div>
-                                <div class="font-bold text-slate-700 leading-none mb-1">${s.nome || 'Sem Nome'}</div>
-                                <div class="text-[10px] text-slate-400 font-mono italic">User: ${s.usuario || '---'}</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4">
-                        <div class="text-sm text-slate-600 font-medium">${s.cartao || '---'}</div>
-                        <div class="text-[10px] text-slate-400 uppercase font-bold">CPF: ${s.cpf || '---'}</div>
-                    </td>
-                    <td class="px-6 py-4">
-                        <div class="text-xs font-bold ${saldoReal <= 0 ? 'text-red-500' : 'text-green-600'}">
-                            ${formatarMoeda(saldoReal)}
-                        </div>
-                        <div class="text-[10px] text-slate-400 font-bold uppercase">
-                            ${formatarMoeda(limite)}
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 text-right">
-                        <div class="flex justify-end gap-2">
-                            <button onclick="prepararEdicaoServidor(${s.id})" class="text-blue-500 hover:bg-blue-50 p-2 rounded-lg transition-all" title="Editar">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button onclick="deleteServidor(${s.id})" class="text-red-400 hover:bg-red-50 p-2 rounded-lg transition-all" title="Excluir">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            `;
+    <tr class="hover:bg-slate-50/50 transition-colors border-b border-slate-100 last:border-0">
+        <td class="px-6 py-4 font-mono font-bold text-blue-600">#${s.id}</td>
+        <td class="px-6 py-4">
+            <div class="flex items-center gap-3">
+                <img src="${img}" class="w-8 h-8 rounded-full object-cover border border-slate-200">
+                <div>
+                    <div class="font-bold text-slate-700 leading-none mb-1">${s.nome || 'Sem Nome'}</div>
+                    <div class="text-[10px] text-slate-400 font-mono italic uppercase">User: ${s.usuario || '---'}</div>
+                </div>
+            </div>
+        </td>
+        <td class="px-6 py-4">
+            <div class="text-sm text-slate-600 font-medium">${s.cartao || '---'}</div>
+            <div class="text-[10px] text-slate-400 uppercase font-bold">CPF: ${s.cpf || '---'}</div>
+        </td>
+        <td class="px-6 py-4">
+            <div class="text-xs font-bold ${saldoReal <= 0 ? 'text-red-500' : 'text-green-600'}">
+                ${formatarMoeda(saldoReal)}
+            </div>
+            <div class="text-[10px] text-slate-400 font-bold uppercase">
+                ${formatarMoeda(limite)}
+            </div>
+        </td>
+        <td class="px-6 py-4 text-right">
+            <div class="flex justify-end items-center gap-1">
+                <button onclick="toggleCartaoFisico(${s.id}, ${isFisico})" 
+                    class="p-2 rounded-lg transition-all ${isFisico ? 'text-blue-600 bg-blue-50' : 'text-slate-300 hover:bg-slate-100'}" 
+                    title="${isFisico ? 'Possui Cartão Físico' : 'Somente Virtual'}">
+                    <i class="fa-solid fa-credit-card"></i>
+                </button>
+
+                <button onclick="prepararEdicaoServidor(${s.id})" class="text-blue-500 hover:bg-blue-50 p-2 rounded-lg transition-all" title="Editar">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                
+                <button onclick="deleteServidor(${s.id})" class="text-red-400 hover:bg-red-50 p-2 rounded-lg transition-all" title="Excluir">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </div>
+        </td>
+    </tr>
+`;
         });
     } catch (err) {
-        console.error("ERRO SUPABASE SERVIDORES:", err);
-        tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-red-500 font-bold">Erro: ${err.message || 'Falha ao conectar'}</td></tr>`;
+        console.error("ERRO SERVIDORES:", err);
+        tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-red-500 font-bold">Erro: ${err.message}</td></tr>`;
+    }
+}
+
+async function toggleCartaoFisico(id, statusAtual) {
+    try {
+        const novoStatus = !statusAtual;
+        const { error } = await _supabase
+            .from('servidores')
+            .update({ cartaoFisico: novoStatus })
+            .eq('id', id);
+
+        if (error) throw error;
+        loadServidoresList(); // Recarrega a tabela para atualizar o ícone
+    } catch (err) {
+        console.error("Erro ao alternar status do cartão:", err);
     }
 }
 
