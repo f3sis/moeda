@@ -2575,7 +2575,7 @@ async function loadAdminsList() {
             tbody.innerHTML += `
                 <tr class="hover:bg-slate-50/50 transition-colors">
                     <td class="px-6 py-4">
-                        <span class="font-mono font-bold text-blue-600">#${admin.id}</span>
+                        <span class="font-mono font-bold text-blue-600">${admin.id}</span>
                     </td>
                     <td class="px-6 py-4 font-bold text-slate-700">
                         ${admin.nome || 'Sem Nome'}
@@ -2919,7 +2919,7 @@ async function prepararEdicaoLojista(id) {
 }
 
 async function deleteLojista(id) {
-    if (!confirm(`Deseja realmente excluir o lojista #${id}?`)) return;
+    if (!confirm(`Deseja realmente excluir o lojista ${id}?`)) return;
 
     const { error } = await _supabase
         .from('lojistas')
@@ -2988,7 +2988,7 @@ async function loadServidoresList() {
 
             tbody.innerHTML += `
     <tr class="hover:bg-slate-50/50 transition-colors border-b border-slate-100 last:border-0">
-        <td class="px-6 py-4 font-mono font-bold text-blue-600">#${s.id}</td>
+        <td class="px-6 py-4 font-mono font-bold text-blue-600">${s.id}</td>
         <td class="px-6 py-4">
             <div class="flex items-center gap-3">
                 <img src="${img}" class="w-8 h-8 rounded-full object-cover border border-slate-200">
@@ -3175,7 +3175,7 @@ async function saveNewServidor(event) {
 
 
 async function deleteServidor(id) {
-    if (!confirm(`Excluir servidor #${id}?`)) return;
+    if (!confirm(`Excluir servidor ${id}?`)) return;
     const { error } = await _supabase.from('servidores').delete().eq('id', id);
     if (error) showMsg("Erro ao excluir", "error");
     else {
@@ -3213,7 +3213,7 @@ async function loadProdutosList() {
         window.listaProdutos.forEach(p => {
             tbody.innerHTML += `
                 <tr class="hover:bg-slate-50/50 transition-colors">
-                    <td class="px-6 py-4 font-mono font-bold text-blue-600">#${p.id}</td>
+                    <td class="px-6 py-4 font-mono font-bold text-blue-600">${p.id}</td>
                     <td class="px-6 py-4">
                         <div class="flex items-center gap-3">
                             <img src="${p.imagem || 'https://placehold.co/40x40?text=P'}" class="w-10 h-10 rounded-lg object-cover border border-slate-100">
@@ -3298,7 +3298,7 @@ async function saveNewProduto(event) {
 
 // 5. Excluir
 async function deleteProduto(id) {
-    if (!confirm(`Deseja excluir o produto #${id}?`)) return;
+    if (!confirm(`Deseja excluir o produto ${id}?`)) return;
     const { error } = await _supabase.from('produtos').delete().eq('id', id);
     if (error) showMsg("Erro ao excluir", "error");
     else {
