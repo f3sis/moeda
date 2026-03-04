@@ -34,6 +34,62 @@
         /* Animação de digitação PIN */
         .pin-dot { transition: all 0.2s ease; }
 
+/* 1. Animação de Entrada do Card (Micro-interaction) */
+#login-card.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* 2. Efeito de Brilho no Botão (Shine effect) */
+    @keyframes shine {
+        100% {
+            transform: translateX(200%);
+        }
+    }
+    .group-hover\:animate-shine:hover {
+        animation: shine 0.75s;
+    }
+
+    /* 3. Desenho do SVG (Path Drawing) */
+    .path-draw {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+        animation: draw 1.5s forwards ease-in-out;
+    }
+    @keyframes draw {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+    
+    .fade-in-slow {
+        opacity: 0;
+        animation: fadeIn 1s forwards 0.5s;
+    }
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+
+    /* 4. Animação de Ícones de Fundo (Dinheiro Flutuando) */
+    .floating-icon {
+        position: absolute;
+        opacity: 0;
+        animation: floatAround 15s infinite linear;
+    }
+
+    @keyframes floatAround {
+        0% {
+            transform: translateY(110vh) translateX(0) rotate(0deg);
+            opacity: 0;
+        }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% {
+            transform: translateY(-10vh) translateX(50px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
     /* Container do Toast */
 #custom-toast {
     position: fixed !important;
@@ -83,11 +139,13 @@
 </head>
 <body class="overflow-x-hidden">
 
-    <div id="sidebar-overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[40] hidden"></div>
+    <div id="sidebar-overlay" onclick="toggleSidebar()" 
+     class="fixed inset-0 bg-slate-900/40 backdrop-blur-md z-[40] hidden transition-all duration-300">
+</div>
 
-    <aside id="main-sidebar" class="fixed left-0 top-0 h-full w-64 bg-slate-900 text-white z-[50] transition-transform -translate-x-full md:translate-x-0 flex flex-col">
+    <aside id="main-sidebar" class="fixed left-0 top-0 h-full w-64 bg-[#173279] text-white z-[50] transition-transform -translate-x-full md:translate-x-0 flex flex-col border-r border-blue-700/30 shadow-2xl">
         <div class="p-6">
-            <h1 class="text-2xl font-black tracking-tighter text-blue-500">F3<span class="text-white">SISTEMAS</span></h1>
+            <h1 class="text-3xl font-black tracking-tighter text-blue-500">F3<span class="text-white"> SISTEMAS</span></h1>
         </div>
     
         <nav id="sidebar-nav" class="px-4 space-y-2 flex-1">
@@ -163,25 +221,52 @@
             <div class="w-10"></div>
         </header>
 
-        <section id="view-login" class="fixed inset-0 bg-slate-900 z-[100] flex items-center justify-center p-4">
-            <div class="bg-white w-full max-w-md rounded-[2.5rem] p-8 shadow-2xl">
-                <div class="text-center mb-8">
-                    <h1 class="text-3xl font-black text-slate-900">F3<span class="text-blue-600">SISTEMAS</span></h1>
-                    <p class="text-slate-400 text-sm font-bold uppercase tracking-widest mt-2">Acesso Restrito</p>
+        <section id="view-login" class="fixed inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 z-[100] flex items-center justify-center p-4 overflow-hidden">
+    
+            <div class="absolute inset-0 opacity-10 pointer-events-none" id="bg-animation-container"></div>
+        
+            <div id="login-card" class="bg-white/95 backdrop-blur-sm w-full max-w-sm rounded-[2rem] p-8 shadow-2xl translate-y-10 opacity-0 transition-all duration-700 ease-out border border-white/20">
+                
+                <div class="text-center mb-8 group">
+                    <div class="flex justify-center items-center mb-3 transition-transform duration-300 group-hover:scale-110">
+                        <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-lg">
+                            <defs>
+                                <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2563eb" /> 
+                                    <stop offset="100%" stop-color="#4f46e5" /> 
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="48" stroke="url(#logo-grad)" stroke-width="4" fill="white" class="path-draw"/>
+                            <path d="M25 45L50 25L75 45V75H25V45Z" fill="url(#logo-grad)" class="fade-in-slow"/>
+                            <path d="M42 62C42 64.2091 43.7909 66 46 66H50C52.2091 66 54 64.2091 54 62C54 59.7909 52.2091 58 50 58H46C43.7909 58 42 56.2091 42 54C42 51.7909 43.7909 50 46 50H50C52.2091 50 54 51.7909 54 54" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M50 47V69" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-3xl font-black text-slate-950 tracking-tighter">F3<span class="text-blue-600"> SISTEMAS</span></h1>
+                    <div class="flex items-center justify-center gap-2 mt-2">
+                        <div class="h-px w-6 bg-slate-200"></div>
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Moeda Social</p>
+                        <div class="h-px w-6 bg-slate-200"></div>
+                    </div>
                 </div>
-                <div class="space-y-4">
-                    <div>
-                        <label class="text-[10px] font-black text-slate-400 uppercase ml-4">Identificador (CNPJ, CPF, Cartão ou Usuário)</label>
-                        <input type="text" id="login-id" class="w-full bg-slate-100 border-none rounded-2xl p-4 focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Digite seu acesso">
+        
+                <div class="space-y-5">
+                    <div class="relative group">
+                        <label class="absolute -top-2.5 left-4 bg-white px-2 text-[10px] font-bold text-blue-600 uppercase tracking-wider rounded-full transition-all group-focus-within:text-blue-700">Acesso</label>
+                        <input type="text" id="login-id" class="w-full bg-white border-2 border-slate-100 rounded-xl p-4 text-base focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all placeholder:text-slate-400" placeholder="Usuário">
                     </div>
-                    <div>
-                        <label class="text-[10px] font-black text-slate-400 uppercase ml-4">Senha</label>
-                        <input type="password" id="login-pass" class="w-full bg-slate-100 border-none rounded-2xl p-4 focus:ring-2 focus:ring-blue-500 outline-none" placeholder="••••">
+                    
+                    <div class="relative group">
+                        <label class="absolute -top-2.5 left-4 bg-white px-2 text-[10px] font-bold text-blue-600 uppercase tracking-wider rounded-full transition-all group-focus-within:text-blue-700">Sua Senha</label>
+                        <input type="password" id="login-pass" class="w-full bg-white border-2 border-slate-100 rounded-xl p-4 text-base focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all placeholder:text-slate-400" placeholder="••••••••">
                     </div>
-                    <button id="btn-login-submit" onclick="handleLogin()" class="w-full bg-blue-600 text-white font-black py-4 rounded-2xl shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-all">
-                        ENTRAR NO SISTEMA
+        
+                    <button id="btn-login-submit" onclick="handleLogin()" class="group relative w-full bg-blue-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/30 hover:bg-blue-700 active:scale-[0.98] transition-all overflow-hidden">
+                        <div class="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-[-30deg] -translate-x-full group-hover:animate-shine"></div>
+                        <span class="relative text-base tracking-tight">ACESSAR</span>
                     </button>
                 </div>
+        
             </div>
         </section>
 
@@ -421,7 +506,7 @@
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
             <div>
                 <h2 class="text-2xl font-black text-slate-800">Gerenciar Alertas</h2>
-                <p class="text-slate-400 text-sm font-bold uppercase tracking-widest">Banners e Avisos do Cliente</p>
+                <p class="text-slate-400 text-sm font-bold uppercase tracking-widest">Banners e Avisos</p>
             </div>
             <button onclick="abrirModalAviso()" class="bg-blue-600 text-white px-6 py-3 rounded-2xl font-black shadow-lg shadow-blue-500/20 hover:scale-105 transition-all">
                 <i class="fa-solid fa-plus mr-2"></i> NOVO BANNER
@@ -477,24 +562,49 @@
             </div>
 
             <div class="grid grid-cols-2 gap-3">
-                <div>
-                    <label class="text-[9px] font-black text-slate-400 uppercase ml-2">URL da Imagem</label>
-                    <input type="url" id="aviso-img" oninput="atualizarPreviewBanner(this.value)" class="w-full bg-slate-100 border-none rounded-xl p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="https://..." required>
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black text-slate-400 uppercase ml-2 block">Imagem do Banner</label>
+                    <div class="flex items-center">
+                        <input type="file" id="aviso-file-input" accept="image/*" class="hidden" onchange="handleFileUpload(this)">
+                        <label for="aviso-file-input" class="w-full h-[44px] flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-xl cursor-pointer transition-all border-2 border-dashed border-slate-300">
+                            <i class="fa-solid fa-cloud-arrow-up text-xs"></i>
+                            <span id="label-upload" class="text-sm">Upload</span>
+                        </label>
+                    </div>
+                    <input type="hidden" id="aviso-img">
                 </div>
-                <div>
-                    <label class="text-[9px] font-black text-slate-400 uppercase ml-2">Link Destino</label>
-                    <input type="text" id="aviso-link" class="w-full bg-slate-100 border-none rounded-xl p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Ex: # ou https://">
+            
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black text-slate-400 uppercase ml-2 block">Link Destino</label>
+                    <input type="text" id="aviso-link" class="w-full h-[44px] bg-slate-100 border-none rounded-xl p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Ex: # ou https://">
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-4 gap-2 items-end">
                 <div>
-                    <label class="text-[9px] font-black text-slate-400 uppercase ml-2">Exibir até (Data)</label>
-                    <input type="date" id="aviso-data-termino" class="w-full bg-slate-100 border-none rounded-xl p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                    <label class="text-[8px] font-black text-slate-400 uppercase ml-1 block mb-1">Exibir até</label>
+                    <input type="date" id="aviso-data-termino" class="w-full bg-slate-100 border-none rounded-xl p-2.5 text-[10px] font-bold focus:ring-2 focus:ring-blue-500 outline-none">
                 </div>
+
                 <div>
-                    <label class="text-[9px] font-black text-slate-400 uppercase ml-2">Ordem</label>
-                    <input type="number" id="aviso-ordem" class="w-full bg-slate-100 border-none rounded-xl p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none" value="1">
+                    <label class="text-[8px] font-black text-slate-400 uppercase ml-1 block mb-1">Ordem</label>
+                    <input type="number" id="aviso-ordem" class="w-full bg-slate-100 border-none rounded-xl p-2.5 text-xs font-bold focus:ring-2 focus:ring-blue-500 outline-none text-center" value="1">
+                </div>
+
+                <div class="flex flex-col items-center pb-2.5">
+                    <label class="text-[8px] font-black text-slate-400 uppercase mb-2">Servidor</label>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="aviso-para-servidor" class="sr-only peer" checked>
+                        <div class="w-8 h-4 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+
+                <div class="flex flex-col items-center pb-2.5">
+                    <label class="text-[8px] font-black text-slate-400 uppercase mb-2">Lojista</label>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="aviso-para-lojista" class="sr-only peer">
+                        <div class="w-8 h-4 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-emerald-600"></div>
+                    </label>
                 </div>
             </div>
 
@@ -503,7 +613,7 @@
                     <input type="checkbox" id="aviso-ativo" checked class="w-4 h-4 accent-blue-600 cursor-pointer">
                     <label for="aviso-ativo" class="text-[10px] font-bold text-slate-600 uppercase cursor-pointer">Ativo</label>
                 </div>
-                <button type="submit" class="flex-1 bg-blue-600 text-white font-black py-3 rounded-xl shadow-md hover:bg-blue-700 transition-all uppercase tracking-tighter text-xs">
+                <button type="submit" class="flex-1 bg-slate-900 text-white font-black py-3.5 rounded-xl shadow-md hover:bg-blue-700 transition-all uppercase tracking-tighter text-xs">
                     Salvar Configurações
                 </button>
             </div>
@@ -527,19 +637,8 @@
         
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
-                            <thead>
-                                <tr class="bg-slate-50 border-b border-slate-100">
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider w-16">ID</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Produto</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Cidade</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Responsável</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table-produtos-body" class="divide-y divide-slate-50">
-                                </tbody>
-                        </table>
+                        <div id="lista-produtos-container" class="flex flex-col gap-2">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -583,39 +682,51 @@
                     <button onclick="closeModalProduto()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
                 </div>
         
-                <form id="form-produto" onsubmit="saveNewProduto(event)" class="p-6 space-y-4">
+                <form id="form-produto" onsubmit="saveNewProduto(event)" class="p-6">
                     <input type="hidden" id="produto-id-edit">
                     
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Descrição do Produto</label>
-                        <input type="text" id="prod-descricao" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
-                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Descrição do Produto</label>
+                            <input type="text" id="prod-descricao" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
+                        </div>
         
-                    <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Cidade</label>
                             <input type="text" id="prod-cidade" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
                         </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Responsável</label>
-                            <input type="text" id="prod-responsavel" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
+        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Contato (Tel/WhatsApp)</label>
+                                    <input type="text" id="prod-contato" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Responsável</label>
+                                    <input type="text" id="prod-responsavel" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
+                                </div>
+                            </div>
+        
+                            <div class="flex flex-col">
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-1 ml-2">Associar Banners</label>
+                                <div id="banners-checklist-container" 
+                                     class="flex-1 min-h-[120px] px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 overflow-y-auto space-y-2">
+                                    <p class="text-[10px] text-slate-400 italic text-center mt-4">Carregando banners...</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
         
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Contato (Tel/WhatsApp)</label>
-                        <input type="text" id="prod-contato" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
-                    </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">URL da Imagem</label>
+                            <input type="text" id="prod-imagem" class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500" placeholder="https://...">
+                        </div>
         
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">URL da Imagem</label>
-                        <input type="text" id="prod-imagem" class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500" placeholder="https://...">
-                    </div>
-        
-                    <div class="pt-4">
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-save"></i> Salvar Produto
-                        </button>
+                        <div class="pt-2">
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-save"></i> Salvar Produto
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -1077,7 +1188,7 @@
                 </div>
         
                     <div id="pdv-step-1" class="text-center w-full">
-                        <span class="text-[9px] block mb-3 font-bold uppercase tracking-[0.2em] text-blue-400">Digite o cartão</span>
+                        <span class="text-[9px] block mb-3 font-bold uppercase tracking-[0.2em] text-blue-400">Digite o número ou CPF</span>
                         <div id="display-card-number" class="text-xl font-black tracking-[0.25em] text-blue-950 whitespace-nowrap">______________</div>
                     </div>
         
@@ -1385,100 +1496,153 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// --- 2. SISTEMA DE LOGIN E LOGOUT ---
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Gatilho para mostrar o Card de Login (Fade-in + Slide-up)
+    setTimeout(() => {
+        document.getElementById('login-card').classList.add('show');
+    }, 100);
+
+    // 2. Criar ícones flutuantes de fundo (Temática Comércio)
+    const container = document.getElementById('bg-animation-container');
+    // Ícones Heroicons (SVG simples) para Dinheiro, Carrinho, Tag
+    const icons = [
+        '<svg fill="none" viewBox="0 0 24 24" stroke="white" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>', // Moeda
+        '<svg fill="none" viewBox="0 0 24 24" stroke="white" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>', // Carrinho
+        '<svg fill="none" viewBox="0 0 24 24" stroke="white" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>' // Cartão/Tag
+    ];
+
+    for (let i = 0; i < 15; i++) {
+        const div = document.createElement('div');
+        div.className = 'floating-icon';
+        // HTML aleatório dos ícones
+        div.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+        
+        // Posição e delay aleatórios
+        div.style.left = Math.random() * 100 + 'vw';
+        div.style.animationDelay = Math.random() * 10 + 's';
+        div.style.animationDuration = (Math.random() * 10 + 10) + 's'; // 10s a 20s
+        
+        container.appendChild(div);
+    }
+});
+
+// --- 2. SISTEMA DE LOGIN E LOGOUT (VERSÃO ATUALIZADA PARA DESIGN NOVO) ---
+
 async function handleLogin() {
+    // Pegando os elementos exatos do novo HTML
     const btnSubmit = document.getElementById('btn-login-submit');
-    const id = document.getElementById('login-id').value;
-    const pass = document.getElementById('login-pass').value;
+    const idInput = document.getElementById('login-id');
+    const passInput = document.getElementById('login-pass');
+    
+    const id = idInput.value.trim();
+    const pass = passInput.value.trim();
 
     if(!id || !pass) return showMsg("Preencha os campos", "error");
 
-    btnSubmit.innerText = "VERIFICANDO...";
+    // Feedback visual moderno no botão
+    const originalBtnText = "ENTRAR NO SISTEMA";
+    btnSubmit.innerHTML = `<span class="flex items-center justify-center gap-2">
+        <svg class="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+        VERIFICANDO...
+    </span>`;
     btnSubmit.disabled = true;
 
-    // 1. Tenta logar como ADMIN (Tabela 'usuarios')
-    const { data: admin } = await _supabase
-    .from('usuarios')
-    .select('*')
-    .eq('login', id)
-    .eq('senha', pass)
-    .maybeSingle();
+    try {
+        // 1. Tenta logar como ADMIN (Tabela 'usuarios')
+        const { data: admin } = await _supabase
+            .from('usuarios')
+            .select('*')
+            .eq('login', id)
+            .eq('senha', pass)
+            .maybeSingle();
 
-if (admin) {
-    currentUser = { ...admin, tipo: 'ADMIN' };
-    iniciarPainelAdmin(); 
-    return;
-}
+        if (admin) {
+            currentUser = { ...admin, tipo: 'ADMIN' };
+            return iniciarPainelAdmin(); 
+        }
 
-    // 2. Tenta logar como Lojista
-    const { data: lojista } = await _supabase
-        .from('lojistas')
-        .select('*')
-        .or(`cnpj.eq."${id}",usuario.eq."${id}"`)
-        .eq('senha', pass)
-        .maybeSingle();
+        // 2. Tenta logar como Lojista
+        const { data: lojista } = await _supabase
+            .from('lojistas')
+            .select('*')
+            .or(`cnpj.eq."${id}",usuario.eq."${id}"`)
+            .eq('senha', pass)
+            .maybeSingle();
 
-    if (lojista) {
-        currentUser = { ...lojista, tipo: 'LOJISTA' };
-        iniciarPainelLojista();
-        return;
+        if (lojista) {
+            currentUser = { ...lojista, tipo: 'LOJISTA' };
+            return iniciarPainelLojista();
+        }
+
+        // 3. Tenta como Servidor
+        const { data: servidor } = await _supabase
+            .from('servidores')
+            .select('*')
+            .or(`cartao.eq."${id}",usuario.eq."${id}",cpf.eq."${id}"`)
+            .eq('senha', pass)
+            .maybeSingle();
+
+        if (servidor) {
+            currentUser = { ...servidor, tipo: 'SERVIDOR' };
+            return iniciarPainelServidor();
+        }
+
+        // Se falhar em todos
+        showMsg("Usuário ou senha incorretos", "error");
+        
+    } catch (error) {
+        console.error("Erro no login:", error);
+        showMsg("Erro de conexão", "error");
+    } finally {
+        // Restaura o botão caso não tenha logado
+        btnSubmit.innerHTML = originalBtnText;
+        btnSubmit.disabled = false;
     }
-
-    // 3. Tenta como Servidor
-    const { data: servidor } = await _supabase
-        .from('servidores')
-        .select('*')
-        .or(`cartao.eq."${id}",usuario.eq."${id}",cpf.eq."${id}"`)
-        .eq('senha', pass)
-        .maybeSingle();
-
-    if (servidor) {
-        currentUser = { ...servidor, tipo: 'SERVIDOR' };
-        iniciarPainelServidor();
-        return;
-    }
-
-    btnSubmit.innerText = "ENTRAR NO SISTEMA";
-    btnSubmit.disabled = false;
-    showMsg("Usuário ou senha incorretos", "error");
 }
 
 async function logout() {
-    // 0. (Opcional) Encerra sessão no Supabase se estiver usando
-    if (typeof _supabase !== 'undefined') {
+    // 0. Encerra sessão no Supabase
+    if (typeof _supabase !== 'undefined' && _supabase.auth) {
         await _supabase.auth.signOut();
     }
 
-    // 1. Limpa o estado do usuário e dados em memória
+    // 1. Limpa o estado
     currentUser = null;
     window.listaServidores = [];
     window.listaLojistas = [];
     window.listaProdutos = [];
 
-    // 2. Interface: Reseta o Botão de Login (CORREÇÃO DO SEU PROBLEMA)
-    const loginBtn = document.querySelector('#view-login button');
+    // 2. Interface: Reseta o Botão de Login do design moderno
+    const loginBtn = document.getElementById('btn-login-submit');
     if (loginBtn) {
         loginBtn.disabled = false;
-        loginBtn.innerHTML = 'Entrar'; // Ou o texto original que você usa
+        loginBtn.innerHTML = 'ENTRAR NO SISTEMA'; 
     }
 
-    // 3. Volta para a tela de login e limpa os campos
-    document.querySelectorAll('.view-section').forEach(v => v.classList.add('hidden'));
-    document.getElementById('view-login').classList.remove('hidden');
-    document.getElementById('login-id').value = '';
-    document.getElementById('login-pass').value = '';
+    // 3. Volta para a tela de login (Garante que o ID seja view-login)
+    document.querySelectorAll('section').forEach(v => v.classList.add('hidden'));
     
-    // 4. Esconde TODOS os botões do menu lateral
+    const viewLogin = document.getElementById('view-login');
+    if (viewLogin) {
+        viewLogin.classList.remove('hidden');
+        
+        // Reinicia a animação do card (efeito visual)
+        const loginCard = document.getElementById('login-card');
+        if (loginCard) {
+            loginCard.classList.remove('show');
+            setTimeout(() => loginCard.classList.add('show'), 50);
+        }
+    }
+
+    // Limpa os campos
+    if(document.getElementById('login-id')) document.getElementById('login-id').value = '';
+    if(document.getElementById('login-pass')) document.getElementById('login-pass').value = '';
+    
+    // 4. Esconde os botões do menu
     const menuButtons = [
-        'btn-pdv', 
-        'btn-history', 
-        'btn-servidor-card', 
-        'btn-admin-users', 
-        'btn-admin-servidores', 
-        'btn-admin-lojistas',
-        'btn-admin-produtos',
-        'btn-admin-ajustes',
-        'btn-admin-conciliacao'
+        'btn-pdv', 'btn-history', 'btn-servidor-card', 
+        'btn-admin-users', 'btn-admin-servidores', 'btn-admin-lojistas',
+        'btn-admin-produtos', 'btn-admin-ajustes', 'btn-admin-conciliacao'
     ];
 
     menuButtons.forEach(id => {
@@ -1487,18 +1651,15 @@ async function logout() {
     });
     
     // 5. Reseta estados de interface e títulos
-    resetPDV();
-    document.getElementById('page-title').innerText = 'F3 Sistemas';
+    if (typeof resetPDV === 'function') resetPDV();
+    const title = document.getElementById('page-title');
+    if (title) title.innerText = 'F3 Sistemas';
     
-    // 6. Feedback visual e mobile
-    closeSidebarOnMobile();
+    // 6. Fecha menu mobile
+    if (typeof closeSidebarOnMobile === 'function') closeSidebarOnMobile();
     
-    // Pequeno delay na mensagem para garantir que a tela já mudou
-    setTimeout(() => {
-        showMsg("Sessão encerrada com sucesso", "success");
-    }, 100);
+    showMsg("Sessão encerrada com sucesso", "success");
 }
-
 
 function iniciarPainelAdmin() {
     document.getElementById('view-login').classList.add('hidden');
@@ -1560,7 +1721,15 @@ async function iniciarPainelServidor() {
     const elementsToToggle = {
         'btn-servidor-card': true,
         'btn-pdv': false,
-        'btn-history': false
+        'btn-history': false,
+        'btn-admin-users': false,
+        'btn-admin-servidores': false,
+        'btn-admin-lojistas': false,
+        'btn-admin-produtos': false,
+        'btn-admin-conciliacao': false,
+        'btn-admin-ajustes': false,
+        'btn-admin-pagamentos': false,
+        'btn-admin-alertas': false,
     };
 
     Object.entries(elementsToToggle).forEach(([id, show]) => {
@@ -1633,94 +1802,160 @@ async function iniciarPainelServidor() {
     gerenciarPendenciasServidor();
     loadServidorHistory().catch(err => console.error("Erro ao carregar histórico:", err));
     // --- NOVA CHAMADA DE BANNERS ---
-    gerenciarExibicaoBanners();
+    gerenciarExibicaoBanners('servidor');
 }
 
-async function gerenciarExibicaoBanners() {
+async function gerenciarExibicaoBanners(tipoUsuario = null) {
     try {
-        // 1. Busca banners ativos e dentro do prazo
         const hoje = new Date().toISOString().split('T')[0];
-        const { data: banners } = await _supabase
-            .from('avisos')
-            .select('*')
-            .eq('ativo', true)
-            .or(`data_termino.is.null,data_termino.gte.${hoje}`)
-            .order('ordem', { ascending: true });
 
-        if (!banners || banners.length === 0) return;
+        // --- 1. DEFINIÇÃO DO PONTO DE PARTIDA ---
+        let ehServidor = (tipoUsuario === 'servidor');
+        if (!tipoUsuario && typeof currentUser !== 'undefined') {
+            ehServidor = currentUser.hasOwnProperty('produto_referencia') && (currentUser.cargo || !currentUser.cnpj);
+        }
 
-        // 2. Busca dados de visualização do servidor logado
-        const { data: servidor } = await _supabase
-            .from('servidores')
-            .select('avisos')
+        const tabelaUser = ehServidor ? 'servidores' : 'lojistas';
+        const filtroDestinatario = ehServidor ? 'servidor' : 'lojista';
+
+        console.log(`[BANNER] Iniciando para: ${filtroDestinatario.toUpperCase()}`);
+
+        // --- 2. CAPTURA DA REFERÊNCIA DO PRODUTO NO USUÁRIO ---
+        const { data: usuarioDB, error: errU } = await _supabase
+            .from(tabelaUser)
+            .select('id, avisos, produto_referencia')
             .eq('id', currentUser.id)
             .single();
 
-        let registroAvisos = servidor.avisos || {};
+        if (errU || !usuarioDB || !usuarioDB.produto_referencia) {
+            console.warn(`[BANNER] Usuário sem produto_referencia na tabela ${tabelaUser}.`);
+            return;
+        }
 
-        // 3. LÓGICA DE ALTERNÂNCIA:
-        // Filtramos os banners que ainda têm crédito (menos de 3 hoje)
+        // --- 3. CRUZAMENTO COM A TABELA DE PRODUTOS ---
+        const { data: produtoDB, error: errP } = await _supabase
+            .from('produtos')
+            .select('banner_ids')
+            .eq('descricao', usuarioDB.produto_referencia)
+            .single();
+
+        if (errP || !produtoDB || !produtoDB.banner_ids) {
+            console.warn(`[BANNER] Produto "${usuarioDB.produto_referencia}" não possui IDs de banners.`);
+            return;
+        }
+
+        let idsAutorizados = [];
+        try {
+            const bruto = typeof produtoDB.banner_ids === 'string' ? JSON.parse(produtoDB.banner_ids) : produtoDB.banner_ids;
+            idsAutorizados = Array.isArray(bruto) ? bruto.map(id => Number(id)) : [];
+        } catch (e) {
+            console.error("[BANNER] Erro ao processar banner_ids do produto.");
+            return;
+        }
+
+        if (idsAutorizados.length === 0) return;
+
+        // --- 4. VALIDAÇÃO DOS DESTINATÁRIOS E IDS NA TABELA AVISOS ---
+        const { data: banners, error: errB } = await _supabase
+            .from('avisos')
+            .select('*')
+            .eq('ativo', true)
+            .in('id', idsAutorizados)
+            .contains('destinatarios', [filtroDestinatario])
+            .or(`data_termino.is.null,data_termino.gte.${hoje}`);
+
+        if (errB || !banners || banners.length === 0) {
+            console.log("[BANNER] Nenhum banner ativo compatível encontrado.");
+            return;
+        }
+
+        // --- 5. CONTROLE DE FREQUÊNCIA (3X DIÁRIAS) ---
+        let registroAvisos = usuarioDB.avisos || {};
         const candidatos = banners.filter(b => {
-            const dados = registroAvisos[b.titulo] || { data: "", visualizacoes: 0 };
-            const visualizacoesHoje = dados.data === hoje ? dados.visualizacoes : 0;
+            const status = registroAvisos[b.titulo] || { data: "", visualizacoes: 0 };
+            const visualizacoesHoje = (status.data === hoje ? status.visualizacoes : 0);
             return visualizacoesHoje < 3;
         });
 
         if (candidatos.length === 0) return;
 
+        const bannerSelecionado = candidatos.reduce((prev, curr) => {
+            const vPrev = (registroAvisos[prev.titulo]?.data === hoje) ? registroAvisos[prev.titulo].visualizacoes : 0;
+            const vCurr = (registroAvisos[curr.titulo]?.data === hoje) ? registroAvisos[curr.titulo].visualizacoes : 0;
+            return (vCurr < vPrev) ? curr : prev;
+        });
 
-// Escolha inteligente: busca o banner que o usuário viu MENOS vezes hoje
-const bannerParaExibir = candidatos.reduce((prev, curr) => {
-    // Quantidade de vezes que o 'anterior' foi visto hoje
-    const vPrev = (registroAvisos[prev.titulo]?.data === hoje) ? registroAvisos[prev.titulo].visualizacoes : 0;
-    
-    // Quantidade de vezes que o 'atual' foi visto hoje
-    const vCurr = (registroAvisos[curr.titulo]?.data === hoje) ? registroAvisos[curr.titulo].visualizacoes : 0;
+        // --- 6. EXIBIÇÃO E REGISTRO DE VISUALIZAÇÃO ---
+        setTimeout(async () => {
+            const modal = document.getElementById('modal-banner-cliente');
+            const img = document.getElementById('img-banner-cliente');
+            const linkTag = document.getElementById('link-banner-cliente');
+            
+            if (!modal || !img) return;
 
-    // Se o ATUAL (curr) foi visto menos vezes que o ANTERIOR (prev), ele vira a nova escolha
-    // Isso garante que se o Banner A tem 1 vista e o B tem 0, o B será escolhido agora.
-    return (vCurr < vPrev) ? curr : prev;
-});
-        if (bannerParaExibir) {
-            setTimeout(async () => {
-                const modal = document.getElementById('modal-banner-cliente');
-                const img = document.getElementById('img-banner-cliente');
-                const link = document.getElementById('link-banner-cliente');
-
-                if (!modal) return;
-
-                img.src = bannerParaExibir.imagem_url;
-                link.href = bannerParaExibir.link_destino;
-
-                // Exibe o banner
-                modal.classList.remove('-translate-y-full');
-                modal.classList.add('translate-y-0');
-
-                // 4. Atualiza o contador
-                let infoAtual = registroAvisos[bannerParaExibir.titulo] || { data: hoje, visualizacoes: 0 };
-                if (infoAtual.data !== hoje) {
-                    infoAtual.data = hoje;
-                    infoAtual.visualizacoes = 1;
-                } else {
-                    infoAtual.visualizacoes += 1;
-                }
-
-                registroAvisos[bannerParaExibir.titulo] = infoAtual;
-
-                // 5. Salva no banco
-                await _supabase
-                    .from('servidores')
-                    .update({ avisos: registroAvisos })
-                    .eq('id', currentUser.id);
+            img.src = bannerSelecionado.imagem_url;
+            
+            // --- LÓGICA DE TRATAMENTO DE LINK WHATSAPP ---
+            let urlDestino = bannerSelecionado.link_destino || "#";
+            
+            if (urlDestino !== "#") {
+                // Remove tudo que não é número para validar se é um telefone
+                const apenasNumeros = urlDestino.replace(/\D/g, '');
                 
+                // Se contiver um número de telefone válido (10 a 11 dígitos padrão BR)
+                // ou se já for um link conhecido de whatsapp
+                if ((apenasNumeros.length >= 10 && apenasNumeros.length <= 13) || urlDestino.includes('wa.me') || urlDestino.includes('whatsapp.com')) {
+                    let numeroFormatado = apenasNumeros;
+                    
+                    // Garante o DDI 55 se o número tiver apenas 10 ou 11 dígitos
+                    if (numeroFormatado.length <= 11) {
+                        numeroFormatado = '55' + numeroFormatado;
+                    }
+
+                    const mensagem = encodeURIComponent(`Olá! Vim do anúncio '${bannerSelecionado.titulo}'`);
+                    urlDestino = `https://api.whatsapp.com/send/?phone=${numeroFormatado}&text=${mensagem}&type=phone_number&app_absent=0`;
+                } else if (!urlDestino.startsWith('http')) {
+                    // Se for um link comum sem protocolo, adiciona https
+                    urlDestino = 'https://' + urlDestino;
+                }
+            }
+
+            if (linkTag) {
+                linkTag.href = urlDestino;
+                linkTag.target = "_blank";
+            }
+
+            // Mostra o modal
+            modal.classList.remove('-translate-y-full');
+            modal.classList.add('translate-y-0');
+
+            // Atualiza o objeto de log
+            let log = registroAvisos[bannerSelecionado.titulo] || { data: hoje, visualizacoes: 0 };
+            if (log.data !== hoje) {
+                log.data = hoje;
+                log.visualizacoes = 1;
+            } else {
+                log.visualizacoes += 1;
+            }
+            registroAvisos[bannerSelecionado.titulo] = log;
+
+            const { error: updateError } = await _supabase
+                .from(tabelaUser)
+                .update({ avisos: registroAvisos })
+                .eq('id', usuarioDB.id);
+
+            if (!updateError) {
                 currentUser.avisos = registroAvisos;
-            }, 5000);
-        }
+                console.log(`[BANNER] Log de visualização salvo em: ${tabelaUser}`);
+            } else {
+                console.error(`[BANNER] Erro ao salvar log em ${tabelaUser}:`, updateError);
+            }
+        }, 5000);
+
     } catch (err) {
-        console.error("Erro ao alternar banners:", err);
+        console.error("[BANNER] Erro crítico na execução:", err);
     }
 }
-
 /**
  * Função Auxiliar: Calcula o saldo disponível subtraindo gastos APROVADOS e EM ABERTO
  */
@@ -2160,6 +2395,7 @@ function iniciarPainelLojista() {
 
     // 5. Define a tela inicial
     showView('pdv');
+    gerenciarExibicaoBanners('lojista');
 }
 
 function openQuickTransaction(type, id) {
@@ -3282,42 +3518,51 @@ function closeModalServidor() {
 }
 
 async function prepararEdicaoServidor(id) {
-    // Busca o servidor na lista global armazenada em memória
+    // 1. Localiza o servidor na memória
     const s = window.listaServidores.find(item => item.id === id);
     if (!s) return;
 
-    // Garante que o select de modelos de cartão esteja populado antes de preencher os dados
+    // 2. Garante que o select tenha opções antes de tentar selecionar uma
     await popularSelectProdutos();
 
-    // Abre o modal e altera o título para edição
+    // 3. Interface: Abre o modal
     const modal = document.getElementById('modal-servidor');
     if (modal) {
         modal.classList.remove('hidden');
-        modal.classList.add('flex'); // Garante que o layout flexível (se usado) funcione
+        modal.classList.add('flex');
     }
     
     document.querySelector('#modal-servidor h3').innerText = "Editar Servidor";
     
-    // Preenchimento dos campos do formulário
+    // 4. Preenche os campos básicos
     document.getElementById('servidor-id-edit').value = s.id;
     document.getElementById('serv-nome').value = s.nome;
     document.getElementById('serv-cpf').value = s.cpf;
     document.getElementById('serv-cartao').value = s.cartao;
     document.getElementById('serv-limite').value = s.limite;
-    
-    // CAMPOS DE ACESSO (Usuário e Senha)
     document.getElementById('serv-usuario').value = s.usuario || "";
     document.getElementById('serv-senha').value = s.senha || "";
-    
-    // O campo 'serv-saldo' foi removido conforme solicitado, 
-    // pois o saldo agora é calculado dinamicamente pelas transações.
 
-    // Sincroniza o select de modelos com a imagem salva
+    // 5. SINCRONIZAÇÃO DO MODELO DE CARTÃO
     const select = document.getElementById('serv-produto-id');
-    if (select && s.imagem_url) {
-        select.value = s.imagem_url;
+    if (select) {
+        // Remove espaços extras que podem vir do banco (trim)
+        const referenciaBuscada = s.produto_referencia ? s.produto_referencia.trim() : "";
         
-        // Dispara o preview manualmente para atualizar a miniatura no modal
+        // Tenta selecionar diretamente pelo valor
+        select.value = referenciaBuscada;
+
+        // Se ainda assim ficar em branco (o value da option pode ser diferente)
+        if (select.selectedIndex === -1 || select.value === "") {
+            // Varre as opções para encontrar o texto correspondente
+            Array.from(select.options).forEach((option, index) => {
+                if (option.text.trim() === referenciaBuscada || option.value.trim() === referenciaBuscada) {
+                    select.selectedIndex = index;
+                }
+            });
+        }
+
+        // 6. Atualiza a imagem do cartão no Modal (Preview)
         if (typeof atualizarPreviewCard === "function") {
             atualizarPreviewCard();
         }
@@ -3385,83 +3630,165 @@ async function deleteServidor(id) {
 
 // 1. Carregar Lista
 async function loadProdutosList() {
-    const tbody = document.getElementById('table-produtos-body');
-    if (!tbody) {
-        console.error("Erro: Elemento table-produtos-body não encontrado no DOM.");
-        return;
-    }
+    const container = document.getElementById('lista-produtos-container');
+    if (!container) return;
 
-    tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-10 text-center text-slate-400 italic">Carregando dados...</td></tr>`;
+    container.innerHTML = `<div class="py-10 text-center text-slate-400 italic font-bold uppercase text-[10px] tracking-widest">Carregando produtos...</div>`;
 
     try {
-        const { data, error } = await _supabase
-            .from('produtos')
-            .select('*')
-            .order('id', { ascending: true });
-
+        const { data: produtos, error } = await _supabase.from('produtos').select('*').order('id', { ascending: true });
         if (error) throw error;
 
-        window.listaProdutos = data || [];
-        tbody.innerHTML = '';
+        const { data: todosBanners } = await _supabase.from('avisos').select('id, titulo');
+        const mapaBanners = Object.fromEntries(todosBanners.map(b => [b.id, b.titulo]));
+
+        window.listaProdutos = produtos || [];
 
         if (window.listaProdutos.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-slate-400">Nenhum produto cadastrado. Clique em 'Novo Produto'.</td></tr>`;
+            container.innerHTML = `<div class="p-8 text-center text-slate-400 border-2 border-dashed rounded-2xl">Nenhum produto cadastrado.</div>`;
             return;
         }
 
-        window.listaProdutos.forEach(p => {
-            tbody.innerHTML += `
-                <tr class="hover:bg-slate-50/50 transition-colors">
-                    <td class="px-6 py-4 font-mono font-bold text-blue-600">${p.id}</td>
-                    <td class="px-6 py-4">
-                        <div class="flex items-center gap-3">
-                            <img src="${p.imagem || 'https://placehold.co/40x40?text=P'}" class="w-10 h-10 rounded-lg object-cover border border-slate-100">
-                            <span class="font-bold text-slate-700">${p.descricao}</span>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 text-sm text-slate-600">${p.cidade}</td>
-                    <td class="px-6 py-4 text-sm text-slate-600">${p.responsavel}</td>
-                    <td class="px-6 py-4 text-right">
-                        <div class="flex justify-end gap-2">
-                            <button onclick="prepararEdicaoProduto(${p.id})" class="text-blue-500 hover:bg-blue-50 p-2 rounded-lg"><i class="fa-solid fa-pen"></i></button>
-                            <button onclick="deleteProduto(${p.id})" class="text-red-400 hover:bg-red-50 p-2 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                        </div>
-                    </td>
-                </tr>`;
-        });
+        // Adicione o parâmetro 'index' no map
+container.innerHTML = window.listaProdutos.map((p, index) => {
+    const idsBanners = p.banner_ids || [];
+    const nomesBanners = idsBanners.map(id => `• ${mapaBanners[id] || 'Banner não encontrado'}`).join('<br>');
+    const qtdBanners = idsBanners.length;
+
+    // Se for o primeiro item, abre para baixo (top-[110%]), senão para cima (bottom-[110%])
+    const tooltipPosClass = index === 0 ? "top-[110%]" : "bottom-[110%]";
+    const setaPosClass = index === 0 
+        ? "bottom-full border-b-slate-800 border-t-transparent" 
+        : "top-full border-t-slate-800 border-b-transparent";
+
+    return `
+    <div class="group bg-white hover:bg-slate-50 border border-slate-100 rounded-xl p-2 flex items-center gap-4 transition-all duration-200 shadow-sm relative overflow-visible">
+        
+        <span class="text-[10px] font-black text-slate-300 w-8 pl-2">#${p.id}</span>
+        
+        <div class="w-10 h-10 rounded-lg overflow-hidden border border-slate-100 flex-shrink-0">
+            <img src="${p.imagem || 'https://placehold.co/100'}" class="w-full h-full object-cover">
+        </div>
+
+        <div class="flex-1 min-w-0">
+            <h4 class="font-black text-slate-700 text-sm truncate uppercase tracking-tighter">${p.descricao}</h4>
+            <div class="flex items-center gap-3">
+                <span class="text-[9px] text-slate-400 flex items-center gap-1 font-black uppercase tracking-widest">
+                    <i class="fa-solid fa-location-dot text-blue-400"></i> ${p.cidade}
+                </span>
+                <span class="text-[9px] text-slate-400 flex items-center gap-1 font-black uppercase tracking-widest">
+                    <i class="fa-solid fa-user text-slate-300"></i> ${p.responsavel}
+                </span>
+            </div>
+        </div>
+
+        <div class="relative group/banners">
+            <div class="flex items-center gap-2 bg-slate-100 group-hover/banners:bg-blue-600 group-hover/banners:text-white px-3 py-1.5 rounded-lg transition-all cursor-help border border-transparent">
+                <i class="fa-solid fa-images text-[10px]"></i>
+                <span class="text-[10px] font-black">${qtdBanners}</span>
+            </div>
+
+            ${qtdBanners > 0 ? `
+            <div class="absolute ${tooltipPosClass} left-1/2 -translate-x-1/2 w-48 bg-slate-800 text-white text-[10px] p-3 rounded-xl opacity-0 pointer-events-none group-hover/banners:opacity-100 transition-all z-[9999] shadow-2xl border border-slate-700">
+                <p class="font-black border-b border-white/10 pb-1.5 mb-1.5 uppercase tracking-widest text-blue-400 flex items-center justify-between">
+                    Banners <span>${qtdBanners}</span>
+                </p>
+                <p class="leading-relaxed text-slate-300 font-medium">${nomesBanners}</p>
+                
+                <div class="absolute left-1/2 -translate-x-1/2 border-8 border-transparent ${setaPosClass}"></div>
+            </div>
+            ` : ''}
+        </div>
+
+        <div class="flex items-center gap-1 pr-2">
+            <button onclick="prepararEdicaoProduto(${p.id})" class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-all">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button onclick="deleteProduto(${p.id})" class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </div>
+    </div>
+    `;
+}).join('');
+
     } catch (err) {
-        console.error("Erro ao carregar produtos:", err);
-        tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-red-500">Erro: Tabela 'produtos' não encontrada ou sem permissão.</td></tr>`;
+        console.error(err);
+        container.innerHTML = `<div class="p-8 text-center text-red-500">Erro ao carregar banco de dados.</div>`;
     }
 }
 
 
 // 2. Modal Controle
-function openModalProduto() {
+async function openModalProduto() {
+    // 1. Reseta o formulário e limpa o ID de edição
     document.getElementById('form-produto').reset();
     document.getElementById('produto-id-edit').value = '';
+    
+    // 2. Ajusta o título do modal
     document.querySelector('#modal-produto h3').innerText = "Novo Produto";
+    
+    // 3. Exibe o modal
     document.getElementById('modal-produto').classList.remove('hidden');
+
+    // 4. Carrega os banners disponíveis para este novo produto
+    try {
+        await loadBannersNoChecklist();
+        
+        // 5. Garante que nenhum banner venha marcado (limpeza visual)
+        const checkboxes = document.querySelectorAll('.banner-checkbox');
+        checkboxes.forEach(cb => cb.checked = false);
+        
+    } catch (err) {
+        console.error("Erro ao carregar banners para novo produto:", err);
+    }
 }
 
 function closeModalProduto() {
     document.getElementById('modal-produto').classList.add('hidden');
+    document.getElementById('form-produto').reset();
+    // Desmarca todos os banners
+    document.querySelectorAll('.banner-checkbox').forEach(cb => cb.checked = false);
 }
 
+
 // 3. Preparar Edição
-function prepararEdicaoProduto(id) {
+async function prepararEdicaoProduto(id) {
     const p = window.listaProdutos.find(item => item.id === id);
     if (!p) return;
 
-    document.getElementById('modal-produto').classList.remove('hidden');
+    // 1. Abre o modal PRIMEIRO
+    const modal = document.getElementById('modal-produto');
+    modal.classList.remove('hidden');
     document.querySelector('#modal-produto h3').innerText = "Editar Produto";
     
-    document.getElementById('produto-id-edit').value = p.id;
-    document.getElementById('prod-descricao').value = p.descricao;
-    document.getElementById('prod-cidade').value = p.cidade;
-    document.getElementById('prod-responsavel').value = p.responsavel;
-    document.getElementById('prod-contato').value = p.contato;
-    document.getElementById('prod-imagem').value = p.imagem;
+    // 2. Preenche os campos básicos
+    document.getElementById('produto-id-edit').value = p.id || '';
+    document.getElementById('prod-descricao').value = p.descricao || '';
+    document.getElementById('prod-cidade').value = p.cidade || '';
+    document.getElementById('prod-responsavel').value = p.responsavel || '';
+    document.getElementById('prod-contato').value = p.contato || '';
+    document.getElementById('prod-imagem').value = p.imagem || '';
+
+    // 3. Aguarda o checklist carregar (com tratamento de erro interno)
+    try {
+        await loadBannersNoChecklist();
+
+        // 4. Só marca os checkboxes se o carregamento acima funcionou
+        if (p.banner_ids && Array.isArray(p.banner_ids)) {
+            // Pequeno delay para garantir que o DOM renderizou o innerHTML novo
+            setTimeout(() => {
+                const checkboxes = document.querySelectorAll('.banner-checkbox');
+                checkboxes.forEach(cb => {
+                    if (p.banner_ids.includes(cb.value)) {
+                        cb.checked = true;
+                    }
+                });
+            }, 50); 
+        }
+    } catch (err) {
+        console.error("Falha ao preparar checklist:", err);
+    }
 }
 
 // 4. Salvar (Insert/Update)
@@ -3469,24 +3796,34 @@ async function saveNewProduto(event) {
     event.preventDefault();
     const idEdit = document.getElementById('produto-id-edit').value;
     
+    // 1. Captura os IDs de todos os banners selecionados no checklist
+    const checkboxes = document.querySelectorAll('.banner-checkbox:checked');
+    const bannersSelecionados = Array.from(checkboxes).map(cb => cb.value);
+
+    // 2. Monta o objeto de dados incluindo a nova coluna banner_ids
     const dados = {
         descricao: document.getElementById('prod-descricao').value,
         cidade: document.getElementById('prod-cidade').value,
         responsavel: document.getElementById('prod-responsavel').value,
         contato: document.getElementById('prod-contato').value,
-        imagem: document.getElementById('prod-imagem').value
+        imagem: document.getElementById('prod-imagem').value,
+        banner_ids: bannersSelecionados // Salva como array de IDs (text[])
     };
 
     let error;
     if (idEdit) {
+        // Edição: Atualiza o registro existente
         const res = await _supabase.from('produtos').update(dados).eq('id', idEdit);
         error = res.error;
     } else {
+        // Novo: Insere um novo registro
         const res = await _supabase.from('produtos').insert([dados]);
         error = res.error;
     }
 
+    // 3. Feedback ao usuário
     if (error) {
+        console.error("Erro Supabase:", error);
         showMsg("Erro ao salvar produto", "error");
     } else {
         showMsg("Produto salvo com sucesso!", "success");
@@ -3688,42 +4025,48 @@ async function loadConciliacao() {
                 // 7. Renderização do Card
                 const isLiq = t.financeiro === 'Liquidado';
                 container.innerHTML += `
-                <div class="group bg-white rounded-2xl border border-slate-100 p-3 hover:border-blue-200 transition-all shadow-sm">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
-                        <div class="flex items-center gap-3 lg:w-1/3">
-                            <div class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 shrink-0">
-                                <i class="fa-solid ${icone} text-[10px] ${ehAvulsa ? 'text-blue-500' : (ehManual ? 'text-amber-500' : '')}"></i>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-[9px] font-bold text-slate-400 uppercase leading-none mb-0.5">${t.data.split('T')[0].split('-').reverse().join('/')} ${t.data.split('T')[1].substring(0, 5)}</p>
-                                <h4 class="text-[10px] font-black text-slate-800 uppercase truncate">${t.lojistas?.nome || 'Lojista'}</h4>
-                            </div>
-                        </div>
+    <div class="group bg-white rounded-2xl border border-slate-100 p-3 hover:border-blue-200 transition-all shadow-sm relative">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+            
+            <div class="flex items-center gap-3 lg:w-1/3">
+                <div class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 shrink-0">
+                    <i class="fa-solid ${icone} text-[10px] ${ehAvulsa ? 'text-blue-500' : (ehManual ? 'text-amber-500' : '')}"></i>
+                </div>
+                <div class="min-w-0">
+                    <p class="text-[9px] font-bold text-slate-600 uppercase leading-none mb-0.5">${t.data.split('T')[0].split('-').reverse().join('/')} ${t.data.split('T')[1].substring(0, 5)}</p>
+                    <h4 class="text-[10px] font-black text-slate-800 uppercase truncate">${t.lojistas?.nome || 'Lojista'}</h4>
+                </div>
+            </div>
 
-                        <div class="flex flex-1 items-center justify-around bg-slate-50/40 rounded-xl px-3 py-1.5 border border-slate-50">
-                            <div class="text-center">
-                                <p class="text-[7px] font-black text-slate-400 uppercase tracking-tighter leading-none mb-1">Bruto</p>
-                                <p class="text-[11px] font-bold text-slate-500 tabular-nums">${money(vBruto)}</p>
-                            </div>
-                            <div class="text-center px-4 border-x border-slate-100">
-                                <p class="text-[7px] font-black text-slate-400 uppercase tracking-tighter leading-none mb-1">${tipoLabel} (${percExibicao.toFixed(1)}%)</p>
-                                <p class="text-[11px] font-black ${corClasse} tabular-nums">- ${money(vTaxaTotal)}</p>
-                            </div>
-                            <div class="text-center">
-                                <p class="text-[7px] font-black text-slate-400 uppercase tracking-tighter leading-none mb-1">Repasse</p>
-                                <p class="text-[12px] font-black text-slate-800 tabular-nums tracking-tight">${money(vLiquido)}</p>
-                            </div>
-                        </div>
+            <div class="flex flex-1 items-center justify-around bg-slate-50/40 rounded-xl px-3 py-1.5 border border-slate-50">
+                <div class="text-center">
+                    <p class="text-[8px] font-black text-slate-600 uppercase tracking-tighter leading-none mb-1">Bruto</p>
+                    <p class="text-[12px] font-bold text-slate-500 tabular-nums">${money(vBruto)}</p>
+                </div>
+                <div class="text-center px-4 border-x border-slate-100">
+                    <p class="text-[8px] font-black text-slate-600 uppercase tracking-tighter leading-none mb-1">${tipoLabel} (${percExibicao.toFixed(1)}%)</p>
+                    <p class="text-[12px] font-black ${corClasse} tabular-nums">- ${money(vTaxaTotal)}</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-[8px] font-black text-slate-600 uppercase tracking-tighter leading-none mb-1">Repasse</p>
+                    <p class="text-[12px] font-black text-slate-800 tabular-nums tracking-tight">${money(vLiquido)}</p>
+                </div>
+            </div>
 
-                        <div class="flex items-center justify-end gap-3 min-w-[120px]">
-                            <span class="px-2 py-0.5 rounded-full text-[8px] font-black border ${isLiq ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-amber-50 text-amber-600 border-amber-100'}">${t.financeiro.toUpperCase()}</span>
-                            <button onclick="alterarStatusFinanceiro(${t.id}, '${isLiq ? 'Em aberto' : 'Liquidado'}')" 
-                                class="bg-slate-800 text-white p-2 rounded-lg hover:bg-blue-600 transition-all group-hover:scale-105">
-                                <i class="fa-solid ${isLiq ? 'fa-rotate-left' : 'fa-check'} text-[9px]"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>`;
+            <div class="absolute top-3 right-3 lg:relative lg:top-0 lg:right-0 flex flex-row items-center justify-end gap-2 min-w-fit">
+                
+                <span class="px-2 py-0.5 rounded-full text-[8px] font-black border ${isLiq ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-amber-50 text-amber-600 border-amber-100'}">
+                    ${t.financeiro.toUpperCase()}
+                </span>
+
+                <button onclick="alterarStatusFinanceiro(${t.id}, '${isLiq ? 'Em aberto' : 'Liquidado'}')" 
+                    class="bg-slate-800 text-white py-1 px-2 rounded-lg hover:bg-blue-600 transition-all group-hover:scale-105 flex items-center justify-center h-6">
+                    <i class="fa-solid ${isLiq ? 'fa-rotate-left' : 'fa-check'} text-[9px]"></i>
+                </button>
+                
+            </div>
+        </div>
+    </div>`;
             });
         }
 
@@ -4759,55 +5102,45 @@ async function abrirDetalhes(ids, lojista, dataPag) {
     }
 }
 
-async function loadBannersAvisos() {
-    const container = document.getElementById('container-banners-cliente');
-    
-    const { data: avisos, error } = await _supabase
-        .from('avisos')
-        .select('*')
-        .eq('ativo', true)
-        .order('ordem', { ascending: true });
 
-    if (error || !avisos) return;
-
-    container.innerHTML = avisos.map(aviso => `
-        <div class="relative w-full aspect-[3/1] rounded-[2rem] overflow-hidden shadow-xl mb-6 group">
-            <img src="${aviso.imagem_url}" class="w-full h-full object-cover">
-            
-            <div class="absolute inset-0 bg-black/20 flex items-end p-4">
-                <a href="${aviso.link_destino}" target="_blank" 
-                   class="bg-white/90 backdrop-blur text-slate-900 text-[10px] font-black px-4 py-2 rounded-xl shadow-lg hover:bg-white transition-all uppercase tracking-tighter">
-                    Clique aqui <i class="fa-solid fa-arrow-right ml-1"></i>
-                </a>
-            </div>
-        </div>
-    `).join('');
-}
 
 async function salvarAviso(e) {
     e.preventDefault();
     
     const id = document.getElementById('aviso-id').value;
-    
-    // Captura a data e trata se estiver vazia
+    const imagemUrl = document.getElementById('aviso-img').value;
+
+    // Validação extra: impede salvar se não houver imagem carregada
+    if (!imagemUrl) {
+        showMsg("Por favor, faça o upload de uma imagem primeiro.", "error");
+        return;
+    }
+
     const dataTerminoRaw = document.getElementById('aviso-data-termino').value;
+
+    // LOGICA DE DESTINATÁRIOS (Array)
+    const paraServidor = document.getElementById('aviso-para-servidor').checked;
+    const paraLojista = document.getElementById('aviso-para-lojista').checked;
+    
+    let destinatarios = [];
+    if (paraServidor) destinatarios.push('servidor');
+    if (paraLojista) destinatarios.push('lojista');
 
     const dados = {
         titulo: document.getElementById('aviso-titulo').value,
-        imagem_url: document.getElementById('aviso-img').value,
+        imagem_url: imagemUrl,
         link_destino: document.getElementById('aviso-link').value,
         ordem: parseInt(document.getElementById('aviso-ordem').value) || 0,
         ativo: document.getElementById('aviso-ativo').checked,
-        data_termino: dataTerminoRaw || null // Se vazio, envia null para não expirar
+        data_termino: dataTerminoRaw || null,
+        destinatarios: destinatarios // Novo campo enviado como array ['servidor', 'lojista']
     };
 
     try {
         let res;
         if (id) {
-            // Edição: Atualiza o registro existente
             res = await _supabase.from('avisos').update(dados).eq('id', id);
         } else {
-            // Novo Cadastro: Insere na tabela
             res = await _supabase.from('avisos').insert([dados]);
         }
 
@@ -4816,7 +5149,6 @@ async function salvarAviso(e) {
         showMsg("Banner configurado com sucesso!", "success");
         fecharModalAviso();
         
-        // Recarrega a listagem no painel administrativo
         if (typeof loadAdminAvisos === 'function') {
             loadAdminAvisos();
         }
@@ -4827,14 +5159,77 @@ async function salvarAviso(e) {
     }
 }
 
+async function handleFileUpload(input) {
+    const file = input.files[0];
+    const label = document.getElementById('label-upload');
+    const inputUrl = document.getElementById('aviso-img');
+    const previewImg = document.getElementById('aviso-preview-img');
+
+    if (!file) return;
+
+    try {
+        label.innerText = "Enviando...";
+        
+        // Gera um nome único para o arquivo
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${Date.now()}-${Math.floor(Math.random() * 1000)}.${fileExt}`;
+        const filePath = `banners-avisos/${fileName}`;
+
+        // 1. Upload para o Supabase Storage (Bucket: 'banners')
+        const { data, error } = await _supabase.storage
+            .from('banners')
+            .upload(filePath, file);
+
+        if (error) throw error;
+
+        // 2. Obter URL pública
+        const { data: { publicUrl } } = _supabase.storage
+            .from('banners')
+            .getPublicUrl(filePath);
+
+        // 3. Atualizar UI e o input de URL que será salvo no banco
+        inputUrl.value = publicUrl;
+        
+        // Atualiza a prévia se existir
+        if (previewImg) {
+            previewImg.src = publicUrl;
+            previewImg.classList.remove('hidden');
+            document.getElementById('aviso-preview-placeholder')?.classList.add('hidden');
+        }
+
+    } catch (err) {
+        console.error("Erro no upload:", err);
+        label.innerText = "❌ Erro no upload";
+        alert("Falha ao subir imagem: " + err.message);
+    }
+}
+
 // Ligar o formulário à função
 document.getElementById('form-aviso')?.addEventListener('submit', salvarAviso);
 
 function fecharModalAviso() {
+    // 1. Esconde o modal e reseta o formulário
     document.getElementById('modal-aviso').classList.add('hidden');
     document.getElementById('form-aviso').reset();
+    
+    // 2. Limpa campos ocultos e específicos
     document.getElementById('aviso-id').value = '';
-    document.getElementById('aviso-data-termino').value = ''; // Limpa a data
+    document.getElementById('aviso-img').value = ''; // Limpa a URL da imagem salva
+    document.getElementById('aviso-data-termino').value = ''; // Limpa a data de validade
+
+    // 3. Reseta o texto do botão de upload
+    const labelUpload = document.getElementById('label-upload');
+    if (labelUpload) {
+        labelUpload.innerText = "Upload";
+    }
+
+    // 4. Limpa o input de arquivo (para permitir selecionar o mesmo arquivo novamente se desejar)
+    const fileInput = document.getElementById('aviso-file-input');
+    if (fileInput) {
+        fileInput.value = '';
+    }
+
+    // 5. Reseta a prévia visual
     atualizarPreviewBanner('');
 }
 
@@ -4919,8 +5314,14 @@ async function editarAviso(id) {
         document.getElementById('aviso-ativo').checked = aviso.ativo;
 
         // --- IMPLEMENTAÇÃO DA DATA ---
-        // Preenche o campo de data (espera formato YYYY-MM-DD)
         document.getElementById('aviso-data-termino').value = aviso.data_termino || '';
+
+        // --- NOVO: IMPLEMENTAÇÃO DOS DESTINATÁRIOS ---
+        const listaDest = aviso.destinatarios || [];
+        // Marca o switch de Servidor se 'servidor' estiver no array
+        document.getElementById('aviso-para-servidor').checked = listaDest.includes('servidor');
+        // Marca o switch de Lojista se 'lojista' estiver no array
+        document.getElementById('aviso-para-lojista').checked = listaDest.includes('lojista');
 
         // 3. Atualiza o Preview da imagem
         atualizarPreviewBanner(aviso.imagem_url);
@@ -4936,21 +5337,87 @@ async function editarAviso(id) {
 
 // Função para deletar um aviso com confirmação
 async function deletarAviso(id) {
-    if (!confirm("Tem certeza que deseja excluir este banner permanentemente?")) return;
+    if (!confirm("Tem certeza que deseja excluir este banner? Isso removerá o vínculo de produtos e o histórico de visualizações de Servidores e Lojistas.")) return;
 
     try {
-        const { error } = await _supabase
+        // 1. Busca os dados do aviso antes de deletar para obter o TÍTULO
+        const { data: aviso, error: fetchError } = await _supabase
+            .from('avisos')
+            .select('titulo')
+            .eq('id', id)
+            .single();
+
+        if (fetchError || !aviso) throw new Error("Aviso não encontrado.");
+        const tituloRemover = aviso.titulo;
+
+        // 2. DELETA o registro principal na tabela 'avisos'
+        const { error: deleteError } = await _supabase
             .from('avisos')
             .delete()
             .eq('id', id);
 
-        if (error) throw error;
+        if (deleteError) throw deleteError;
 
-        showMsg("Banner removido!", "success");
-        loadAdminAvisos(); // Recarrega a lista para atualizar a tela
+        // 3. LIMPEZA NA TABELA 'PRODUTOS'
+        const { data: produtosParaLimpar } = await _supabase
+            .from('produtos')
+            .select('id, banner_ids')
+            .contains('banner_ids', [id]);
+
+        if (produtosParaLimpar) {
+            for (const prod of produtosParaLimpar) {
+                const novosIds = prod.banner_ids.filter(bannerId => bannerId != id);
+                await _supabase
+                    .from('produtos')
+                    .update({ banner_ids: novosIds })
+                    .eq('id', prod.id);
+            }
+        }
+
+        // 4. LIMPEZA NA TABELA 'SERVIDORES'
+        const { data: servidoresParaLimpar } = await _supabase
+            .from('servidores')
+            .select('id, avisos');
+
+        if (servidoresParaLimpar) {
+            for (const serv of servidoresParaLimpar) {
+                if (serv.avisos && serv.avisos[tituloRemover]) {
+                    const novoRegistroAvisos = { ...serv.avisos };
+                    delete novoRegistroAvisos[tituloRemover];
+                    await _supabase
+                        .from('servidores')
+                        .update({ avisos: novoRegistroAvisos })
+                        .eq('id', serv.id);
+                }
+            }
+        }
+
+        // 5. LIMPEZA NA TABELA 'LOJISTAS' (Adicionado agora)
+        const { data: lojistasParaLimpar } = await _supabase
+            .from('lojistas')
+            .select('id, avisos');
+
+        if (lojistasParaLimpar) {
+            for (const loj of lojistasParaLimpar) {
+                if (loj.avisos && loj.avisos[tituloRemover]) {
+                    const novoRegistroLojista = { ...loj.avisos };
+                    delete novoRegistroLojista[tituloRemover];
+                    
+                    await _supabase
+                        .from('lojistas')
+                        .update({ avisos: novoRegistroLojista })
+                        .eq('id', loj.id);
+                }
+            }
+        }
+
+        showMsg("Banner e referências removidos de todo o sistema!", "success");
+        loadAdminAvisos();
+        if (typeof loadProdutosList === "function") loadProdutosList();
+
     } catch (err) {
-        console.error("Erro ao deletar aviso:", err);
-        showMsg("Não foi possível excluir o banner", "error");
+        console.error("Erro na faxina de dados:", err);
+        showMsg("Erro ao remover banner e dependências", "error");
     }
 }
 
@@ -4990,6 +5457,52 @@ function recolherBannerCliente() {
         console.error("Elemento modal-banner-cliente não encontrado");
     }
 }
+
+async function loadBannersNoChecklist() {
+    const container = document.getElementById('banners-checklist-container');
+    if (!container) return;
+    
+    try {
+        // 1. Buscamos os banners. 
+        // Removi o filtro de data temporariamente para garantir que o problema não seja a query.
+        const { data: banners, error } = await _supabase
+            .from('avisos')
+            .select('id, titulo, ativo')
+            .eq('ativo', true)
+            .order('ordem', { ascending: true });
+
+        if (error) throw error;
+
+        if (!banners || banners.length === 0) {
+            container.innerHTML = `<p class="text-[10px] text-slate-400 text-center py-4 italic">Nenhum banner ativo disponível.</p>`;
+            return;
+        }
+
+        // 2. Renderizamos o HTML
+        container.innerHTML = banners.map((banner, index) => {
+            const tituloCurto = banner.titulo.length > 25 ? banner.titulo.substring(0, 25) + '...' : banner.titulo;
+            return `
+                <label class="flex items-center gap-3 p-2 bg-white rounded-lg border border-slate-100 cursor-pointer hover:bg-blue-50 transition-colors group" title="${banner.titulo}">
+                    <input type="checkbox" 
+                           value="${banner.id}" 
+                           class="banner-checkbox w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-xs font-bold text-slate-700">Banner ${index + 1}</span>
+                        <span class="text-[9px] text-slate-400 group-hover:text-blue-500 transition-colors uppercase">
+                            ${tituloCurto}
+                        </span>
+                    </div>
+                </label>
+            `;
+        }).join('');
+
+    } catch (err) {
+        console.error("Erro crítico ao carregar checklist:", err);
+        container.innerHTML = `<p class="text-[10px] text-red-500 text-center py-4 font-bold">Erro ao conectar com o banco de dados.</p>`;
+    }
+}
+
+
 
 </script>
 </body>
