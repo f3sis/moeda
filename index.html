@@ -149,58 +149,58 @@
         </div>
     
         <nav id="sidebar-nav" class="px-4 space-y-2 flex-1">
-            <button id="btn-pdv" onclick="showView('pdv'); updateActiveNavLink(this)" class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+            <button id="btn-pdv" onclick="showView('pdv'); updateActiveNavLink(this)" class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-calculator"></i> Maquininha PDV
             </button>
-            <button id="btn-history" onclick="showView('lojista-history'); loadLojistaHistory(); updateActiveNavLink(this)" class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+            <button id="btn-history" onclick="showView('lojista-history'); loadLojistaHistory(); updateActiveNavLink(this)" class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-list-ul"></i> Transações Lojista
             </button>
 
-            <button id="btn-repasses" onclick="showView('lojista-repasses'); loadLojistaRepasses(); updateActiveNavLink(this)" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+            <button id="btn-repasses" onclick="showView('lojista-repasses'); loadLojistaRepasses(); updateActiveNavLink(this)" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-hand-holding-dollar"></i> Pagamentos
             </button>
     
-            <button id="btn-servidor-card" onclick="showView('servidor-dashboard'); updateActiveNavLink(this)" class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+            <button id="btn-servidor-card" onclick="showView('servidor-dashboard'); updateActiveNavLink(this)" class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-credit-card"></i> Meu Cartão
             </button>
 
             <button id="btn-admin-conciliacao" 
                 onclick="showView('conciliacao'); prepararFiltrosConciliacao(); loadConciliacao(); updateActiveNavLink(this)" 
-                class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+                class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-scale-balanced"></i> Conciliação
             </button>   
-            <button id="btn-admin-users" onclick="showView('admin-users'); updateActiveNavLink(this); loadAdminsList()" class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+            <button id="btn-admin-users" onclick="showView('admin-users'); updateActiveNavLink(this); loadAdminsList()" class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-user-shield"></i> Usuários
             </button>
-            <button id="btn-admin-servidores" onclick="showView('admin-servidores'); loadServidoresList(); updateActiveNavLink(this)" class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+            <button id="btn-admin-servidores" onclick="showView('admin-servidores'); loadServidoresList(); updateActiveNavLink(this)" class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-id-card"></i> Servidores
             </button>
-            <button id="btn-admin-lojistas" onclick="showView('admin-lojistas'); loadLojistasList(); updateActiveNavLink(this)"class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+            <button id="btn-admin-lojistas" onclick="showView('admin-lojistas'); loadLojistasList(); updateActiveNavLink(this)"class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-store"></i> Lojistas
             </button>
             <button id="btn-admin-produtos" 
                 onclick="showView('admin-produtos'); loadProdutosList(); updateActiveNavLink(this)" 
-                class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+                class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-box-archive"></i> Produtos
             </button>
             <button id="btn-admin-alertas" 
                 onclick="showView('admin-alertas'); loadAdminAvisos(); updateActiveNavLink(this)" 
-                class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
-                <i class="fa-solid fa-bullhorn"></i> Alertas
+                class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
+                <i class="fa-solid fa-bullhorn"></i> Banners
             </button>
             <button id="btn-admin-ajustes" 
                 onclick="showView('ajustes'); loadAjustes(); updateActiveNavLink(this)" 
-                class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+                class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-gear"></i> Ajustes
             </button>
             <button id="btn-admin-pagamentos" 
                 onclick="showView('pagamentos'); loadPagamentosFechados(); updateActiveNavLink(this)" 
-                class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 transition-all font-bold">
+                class="hidden w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 transition-all font-bold">
                 <i class="fa-solid fa-money-bill-transfer"></i> Repasses
             </button>
             <button id="btn-suporte-menu" 
                 onclick="abrirSuporteWhatsapp()" 
-                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:bg-white/10 hover:text-green-400 transition-all font-bold">
+                class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-white/10 hover:text-green-400 transition-all font-bold">
                 <i class="fa-brands fa-whatsapp text-lg"></i> Suporte
             </button>
         </nav>
@@ -245,7 +245,7 @@
                     <h1 class="text-3xl font-black text-slate-950 tracking-tighter">F3<span class="text-blue-600"> SISTEMAS</span></h1>
                     <div class="flex items-center justify-center gap-2 mt-2">
                         <div class="h-px w-6 bg-slate-200"></div>
-                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Moeda Social</p>
+                        <p class="text-[10px] text-slate-600 font-bold uppercase tracking-widest">Moeda Social</p>
                         <div class="h-px w-6 bg-slate-200"></div>
                     </div>
                 </div>
@@ -253,12 +253,12 @@
                 <div class="space-y-5">
                     <div class="relative group">
                         <label class="absolute -top-2.5 left-4 bg-white px-2 text-[10px] font-bold text-blue-600 uppercase tracking-wider rounded-full transition-all group-focus-within:text-blue-700">Acesso</label>
-                        <input type="text" id="login-id" class="w-full bg-white border-2 border-slate-100 rounded-xl p-4 text-base focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all placeholder:text-slate-400" placeholder="Usuário">
+                        <input type="text" id="login-id" class="w-full bg-white border-2 border-slate-100 rounded-xl p-4 text-base focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all placeholder:text-slate-600" placeholder="Usuário">
                     </div>
                     
                     <div class="relative group">
                         <label class="absolute -top-2.5 left-4 bg-white px-2 text-[10px] font-bold text-blue-600 uppercase tracking-wider rounded-full transition-all group-focus-within:text-blue-700">Sua Senha</label>
-                        <input type="password" id="login-pass" class="w-full bg-white border-2 border-slate-100 rounded-xl p-4 text-base focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all placeholder:text-slate-400" placeholder="••••••••">
+                        <input type="password" id="login-pass" class="w-full bg-white border-2 border-slate-100 rounded-xl p-4 text-base focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all placeholder:text-slate-600" placeholder="••••••••">
                     </div>
         
                     <button id="btn-login-submit" onclick="handleLogin()" class="group relative w-full bg-blue-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/30 hover:bg-blue-700 active:scale-[0.98] transition-all overflow-hidden">
@@ -281,7 +281,7 @@
     <div class="flex flex-col md:flex-row gap-4 mb-8 bg-white p-5 rounded-[32px] border border-slate-100 shadow-sm items-end">
     
         <div class="flex-1 w-full">
-            <label class="text-[10px] font-black text-slate-400 uppercase ml-2 mb-2 block tracking-widest">Filtrar Lojista</label>
+            <label class="text-[10px] font-black text-slate-600 uppercase ml-2 mb-2 block tracking-widest">Filtrar Lojista</label>
             <div class="relative">
                 <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 text-xs"></i>
                 <input type="text" id="filter-lojista" oninput="executarFiltros()" placeholder="Digite o nome do estabelecimento..."
@@ -291,12 +291,12 @@
     
         <div class="flex gap-3 w-full md:w-auto">
             <div class="flex-1 md:w-40">
-                <label class="text-[10px] font-black text-slate-400 uppercase ml-2 mb-2 block tracking-widest">De:</label>
+                <label class="text-[10px] font-black text-slate-600 uppercase ml-2 mb-2 block tracking-widest">De:</label>
                 <input type="date" id="filter-data-inicio" onchange="executarFiltros()"
                     class="w-full bg-slate-50 border-none rounded-2xl py-3 px-4 text-[11px] font-bold text-slate-700 focus:ring-2 focus:ring-blue-500/20 transition-all">
             </div>
             <div class="flex-1 md:w-40">
-                <label class="text-[10px] font-black text-slate-400 uppercase ml-2 mb-2 block tracking-widest">Até:</label>
+                <label class="text-[10px] font-black text-slate-600 uppercase ml-2 mb-2 block tracking-widest">Até:</label>
                 <input type="date" id="filter-data-fim" onchange="executarFiltros()"
                     class="w-full bg-slate-50 border-none rounded-2xl py-3 px-4 text-[11px] font-bold text-slate-700 focus:ring-2 focus:ring-blue-500/20 transition-all">
             </div>
@@ -310,7 +310,7 @@
             <div id="lista-pagamentos-corpo" class="grid grid-cols-1 gap-4">
                 <div class="py-20 text-center">
                     <i class="fa-solid fa-circle-notch animate-spin text-blue-500 text-2xl mb-3"></i>
-                    <p class="text-slate-400 text-xs uppercase tracking-widest font-bold">Sincronizando Histórico...</p>
+                    <p class="text-slate-600 text-xs uppercase tracking-widest font-bold">Sincronizando Histórico...</p>
                 </div>
             </div>
         </div>
@@ -326,12 +326,12 @@
     <div class="flex flex-col md:flex-row gap-4 mb-8 items-end justify-end">
         <div class="flex gap-3 w-full md:w-auto">
             <div class="flex-1 md:w-40">
-                <label class="text-[10px] font-black text-slate-400 uppercase ml-2 mb-2 block tracking-widest">Início:</label>
+                <label class="text-[10px] font-black text-slate-600 uppercase ml-2 mb-2 block tracking-widest">Início:</label>
                 <input type="date" id="filter-repasse-inicio" onchange="executarFiltrosRepasses()"
                     class="w-full bg-white border border-slate-100 rounded-2xl py-3 px-4 text-[11px] font-bold text-slate-700 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none shadow-sm">
             </div>
             <div class="flex-1 md:w-40">
-                <label class="text-[10px] font-black text-slate-400 uppercase ml-2 mb-2 block tracking-widest">Fim:</label>
+                <label class="text-[10px] font-black text-slate-600 uppercase ml-2 mb-2 block tracking-widest">Fim:</label>
                 <input type="date" id="filter-repasse-fim" onchange="executarFiltrosRepasses()"
                     class="w-full bg-white border border-slate-100 rounded-2xl py-3 px-4 text-[11px] font-bold text-slate-700 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none shadow-sm">
             </div>
@@ -348,7 +348,7 @@
             <div class="relative bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
                 <div class="p-6 border-b border-slate-100 flex justify-between items-center">
                     <h3 class="text-xl font-black text-slate-800 tracking-tighter">Novo Administrador</h3>
-                    <button onclick="closeModalAdmin()" class="text-slate-400 hover:text-slate-600 transition-colors">
+                    <button onclick="closeModalAdmin()" class="text-slate-600 hover:text-slate-600 transition-colors">
                         <i class="fa-solid fa-xmark text-xl"></i>
                     </button>
                 </div>
@@ -389,7 +389,7 @@
                 <h3 class="text-xl font-black text-slate-800">Resumo de Antecipação</h3>
                 <p id="avulsa-nome-lojista" class="text-xs text-slate-500 font-bold uppercase mt-1">Carregando...</p>
             </div>
-            <button onclick="fecharModalAvulsa()" class="text-slate-400 hover:text-red-500 transition-colors">
+            <button onclick="fecharModalAvulsa()" class="text-slate-600 hover:text-red-500 transition-colors">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
@@ -402,7 +402,7 @@
 
             <div id="avulsa-content" class="hidden space-y-4">
                 <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
-                    <span class="text-[10px] font-black text-slate-400 uppercase">Valor Bruto (Até Ontem)</span>
+                    <span class="text-[10px] font-black text-slate-600 uppercase">Valor Bruto (Até Ontem)</span>
                     <span id="avulsa-bruto" class="font-bold text-slate-700">R$ 0,00</span>
                 </div>
                 
@@ -424,89 +424,129 @@
             <div id="avulsa-empty" class="hidden text-center py-6">
                 <i class="fa-solid fa-folder-open text-slate-300 text-4xl mb-3"></i>
                 <p class="text-sm font-bold text-slate-500">Nenhum saldo disponível.</p>
-                <p class="text-[10px] text-slate-400 uppercase mt-1">Apenas vendas até ontem em aberto.</p>
+                <p class="text-[10px] text-slate-600 uppercase mt-1">Apenas vendas até ontem em aberto.</p>
             </div>
         </div>
     </div>
 </div>
 
-        <div id="modal-lojista" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
-            <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModalLojista()"></div>
-            
-            <div class="relative bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden">
-                <div class="p-6 border-b border-slate-100 flex justify-between items-center">
-                    <h3 class="text-xl font-black text-slate-800 tracking-tighter">Novo Lojista</h3>
-                    <button onclick="closeModalLojista()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
-                </div>
+<div id="modal-contrato" class="hidden fixed inset-0 z-[110] flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="fecharModalContrato()"></div>
+    <div class="relative bg-white w-full max-w-md rounded-2xl shadow-2xl p-6">
+        <h3 class="text-lg font-bold text-slate-800 mb-4">Upload de Contrato</h3>
         
-                <form id="form-lojista" onsubmit="saveNewLojista(event)" class="p-6 grid grid-cols-2 gap-4">
-                    <input type="hidden" id="loja-id-edit">
-                    
-                    <div class="col-span-2">
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Nome do Estabelecimento</label>
-                        <input type="text" id="loja-nome" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all">
-                    </div>
+        <input type="hidden" id="contrato-lojista-id">
         
-                    <div class="col-span-2 lg:col-span-1">
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">CNPJ</label>
-                        <input type="text" id="loja-cnpj" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all">
-                    </div>
-        
-                    <div class="grid grid-cols-2 gap-2 col-span-2 lg:col-span-1">
-                        <div>
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Taxa Adm (%)</label>
-                            <input type="number" step="0.001" id="loja-taxa" required class="w-full px-3 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all text-sm" placeholder="0.03">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Antecipação (%)</label>
-                            <input type="number" step="0.001" id="loja-antecipacao" required class="w-full px-3 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all text-sm" placeholder="0.02">
-                        </div>
-                    </div>
-        
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Usuário de Login</label>
-                        <input type="text" id="loja-usuario" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all">
-                    </div>
-        
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Senha</label>
-                        <input type="password" id="loja-senha" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all">
-                    </div>
-        
-                    <div class="col-span-2 border-t border-slate-50 pt-4">
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Modelo de Cartão Referência</label>
-                        <div class="flex items-center gap-2">
-                            <div class="flex-1">
-                                <select id="loja-produto-id" onchange="atualizarPreviewLojista()" required 
-                                    class="w-full px-3 py-2 rounded-md border border-slate-200 outline-none focus:border-blue-500 bg-white text-sm transition-all">
-                                    <option value="">Selecione...</option>
-                                </select>
-                            </div>
-                            <div id="loja-preview-container" class="relative w-16 h-10 bg-slate-50 rounded-sm border border-slate-200 flex items-center justify-center overflow-hidden shrink-0 transition-all">
-                                <img id="loja-preview-img" src="" class="hidden w-full h-full object-cover">
-                                <div id="loja-preview-placeholder" class="text-slate-300">
-                                    <i class="fa-solid fa-image text-xs"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="hidden" id="loja-produto-referencia">
-                    </div>
-        
-                    <div class="col-span-2 pt-4">
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-lg transition-all">
-                            Salvar Lojista
-                        </button>
-                    </div>
-                </form>
+        <div class="space-y-4">
+            <div class="border-2 border-dashed border-slate-200 rounded-xl p-8 text-center hover:border-indigo-400 transition-all">
+                <input type="file" id="input-arquivo-contrato" class="hidden" accept=".pdf,image/*" onchange="validarArquivo(this)">
+                <label for="input-arquivo-contrato" class="cursor-pointer block">
+                    <i class="fa-solid fa-cloud-arrow-up text-3xl text-indigo-500 mb-2"></i>
+                    <p id="nome-arquivo-contrato" class="text-sm text-slate-500">Clique para selecionar o PDF ou Imagem</p>
+                </label>
             </div>
+
+            <button id="btn-salvar-contrato" onclick="salvarContratoSupabase()" 
+                class="w-full bg-indigo-600 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-indigo-700 transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-check"></i> Finalizar Upload
+            </button>
         </div>
+    </div>
+</div>
+
+        <div id="modal-lojista" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModalLojista()"></div>
+    
+    <div class="relative bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+            <h3 class="text-xl font-black text-slate-800 tracking-tighter">Novo Lojista</h3>
+            <button onclick="closeModalLojista()" class="text-slate-600 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
+        </div>
+
+        <form id="form-lojista" onsubmit="saveNewLojista(event)" class="p-6 grid grid-cols-2 gap-4">
+            <input type="hidden" id="loja-id-edit">
+            
+            <div class="col-span-2">
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Nome do Estabelecimento</label>
+                <input type="text" id="loja-nome" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all">
+            </div>
+
+            <div class="col-span-2 lg:col-span-1">
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">CPF / CNPJ</label>
+                <input type="text" 
+                    id="loja-cnpj" 
+                    required 
+                    maxlength="18" 
+                    inputmode="numeric"
+                    placeholder="Digite CNPJ / CPF"
+                    class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 col-span-2 lg:col-span-1">
+                <div>
+                    <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Taxa Adm (%)</label>
+                    <input type="number" step="0.001" id="loja-taxa" required class="w-full px-3 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all text-sm" placeholder="0.03">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Antecipação (%)</label>
+                    <input type="number" step="0.001" id="loja-antecipacao" required class="w-full px-3 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all text-sm" placeholder="0.02">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Usuário de Login</label>
+                <input type="text" id="loja-usuario" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all">
+            </div>
+
+            <div class="flex items-end gap-3">
+                <div class="flex-1">
+                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Senha</label>
+                    <input type="password" id="loja-senha" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all">
+                </div>
+                
+                <div class="flex flex-col items-center mb-1">
+                    <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Ativo</label>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="loja-ativo" class="sr-only peer" checked>
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-span-2 border-t border-slate-50 pt-4">
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Modelo de Cartão Referência</label>
+                <div class="flex items-center gap-2">
+                    <div class="flex-1">
+                        <select id="loja-produto-id" onchange="atualizarPreviewLojista()" required 
+                            class="w-full px-3 py-2 rounded-md border border-slate-200 outline-none focus:border-blue-500 bg-white text-sm transition-all">
+                            <option value="">Selecione...</option>
+                        </select>
+                    </div>
+                    <div id="loja-preview-container" class="relative w-16 h-10 bg-slate-50 rounded-sm border border-slate-200 flex items-center justify-center overflow-hidden shrink-0 transition-all">
+                        <img id="loja-preview-img" src="" class="hidden w-full h-full object-cover">
+                        <div id="loja-preview-placeholder" class="text-slate-300">
+                            <i class="fa-solid fa-image text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="loja-produto-referencia">
+            </div>
+
+            <div class="col-span-2 pt-4">
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-lg transition-all">
+                    Salvar Lojista
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 
         <section id="view-admin-alertas" class="view-section hidden p-4 md:p-8">
     <div class="max-w-5xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
             <div>
-                <h2 class="text-2xl font-black text-slate-800">Gerenciar Alertas</h2>
-                <p class="text-slate-400 text-sm font-bold uppercase tracking-widest">Banners e Avisos</p>
+                <h2 class="text-2xl font-black text-slate-800">Banners</h2>
+                <p class="text-slate-500 text-sm">Gerencie avisos, alertas e campanhas.</p>
             </div>
             <button onclick="abrirModalAviso()" class="bg-blue-600 text-white px-6 py-3 rounded-2xl font-black shadow-lg shadow-blue-500/20 hover:scale-105 transition-all">
                 <i class="fa-solid fa-plus mr-2"></i> NOVO BANNER
@@ -519,7 +559,7 @@
 </section>
 
 <div id="modal-banner-cliente" class="fixed top-0 left-0 right-0 z-[300] transform -translate-y-full transition-transform duration-500 ease-out p-4 flex justify-center pointer-events-none">
-    <div class="w-full max-w-7xl bg-white rounded-b-lg shadow-2xl border border-slate-100 overflow-hidden pointer-events-auto relative group">
+    <div class="w-full max-w-7xl bg-white rounded-b-lg overflow-hidden pointer-events-auto relative group">
         
         <button onclick="recolherBannerCliente()" 
                 class="absolute top-3 right-3 z-20 bg-black text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all active:scale-95"
@@ -538,7 +578,7 @@
         
         <div class="flex justify-between items-center mb-4">
             <h3 class="text-lg font-black text-slate-800 uppercase tracking-tight">Configurar Banner</h3>
-            <button onclick="fecharModalAviso()" class="text-slate-400 hover:text-red-500 transition-colors">
+            <button onclick="fecharModalAviso()" class="text-slate-600 hover:text-red-500 transition-colors">
                 <i class="fa-solid fa-circle-xmark text-xl"></i>
             </button>
         </div>
@@ -557,13 +597,13 @@
             <input type="hidden" id="aviso-id">
             
             <div>
-                <label class="text-[9px] font-black text-slate-400 uppercase ml-2">Título Interno</label>
+                <label class="text-[9px] font-black text-slate-600 uppercase ml-2">Título Interno</label>
                 <input type="text" id="aviso-titulo" class="w-full bg-slate-100 border-none rounded-xl p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Ex: Promoção Verão" required>
             </div>
 
             <div class="grid grid-cols-2 gap-3">
                 <div class="space-y-2">
-                    <label class="text-[9px] font-black text-slate-400 uppercase ml-2 block">Imagem do Banner</label>
+                    <label class="text-[9px] font-black text-slate-600 uppercase ml-2 block">Imagem do Banner</label>
                     <div class="flex items-center">
                         <input type="file" id="aviso-file-input" accept="image/*" class="hidden" onchange="handleFileUpload(this)">
                         <label for="aviso-file-input" class="w-full h-[44px] flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-xl cursor-pointer transition-all border-2 border-dashed border-slate-300">
@@ -575,24 +615,24 @@
                 </div>
             
                 <div class="space-y-2">
-                    <label class="text-[9px] font-black text-slate-400 uppercase ml-2 block">Link Destino</label>
+                    <label class="text-[9px] font-black text-slate-600 uppercase ml-2 block">Link Destino</label>
                     <input type="text" id="aviso-link" class="w-full h-[44px] bg-slate-100 border-none rounded-xl p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Ex: # ou https://">
                 </div>
             </div>
 
             <div class="grid grid-cols-4 gap-2 items-end">
                 <div>
-                    <label class="text-[8px] font-black text-slate-400 uppercase ml-1 block mb-1">Exibir até</label>
+                    <label class="text-[8px] font-black text-slate-600 uppercase ml-1 block mb-1">Exibir até</label>
                     <input type="date" id="aviso-data-termino" class="w-full bg-slate-100 border-none rounded-xl p-2.5 text-[10px] font-bold focus:ring-2 focus:ring-blue-500 outline-none">
                 </div>
 
                 <div>
-                    <label class="text-[8px] font-black text-slate-400 uppercase ml-1 block mb-1">Ordem</label>
+                    <label class="text-[8px] font-black text-slate-600 uppercase ml-1 block mb-1">Ordem</label>
                     <input type="number" id="aviso-ordem" class="w-full bg-slate-100 border-none rounded-xl p-2.5 text-xs font-bold focus:ring-2 focus:ring-blue-500 outline-none text-center" value="1">
                 </div>
 
                 <div class="flex flex-col items-center pb-2.5">
-                    <label class="text-[8px] font-black text-slate-400 uppercase mb-2">Servidor</label>
+                    <label class="text-[8px] font-black text-slate-600 uppercase mb-2">Servidor</label>
                     <label class="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" id="aviso-para-servidor" class="sr-only peer" checked>
                         <div class="w-8 h-4 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-blue-600"></div>
@@ -600,7 +640,7 @@
                 </div>
 
                 <div class="flex flex-col items-center pb-2.5">
-                    <label class="text-[8px] font-black text-slate-400 uppercase mb-2">Lojista</label>
+                    <label class="text-[8px] font-black text-slate-600 uppercase mb-2">Lojista</label>
                     <label class="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" id="aviso-para-lojista" class="sr-only peer">
                         <div class="w-8 h-4 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-emerald-600"></div>
@@ -650,9 +690,9 @@
                 <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
                     <div>
                         <h3 id="modal-titulo-lojista" class="text-xs font-black text-slate-800 uppercase tracking-tight">Detalhes do Lote</h3>
-                        <p id="modal-subtitulo" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1"></p>
+                        <p id="modal-subtitulo" class="text-[10px] font-bold text-slate-600 uppercase tracking-widest mt-1"></p>
                     </div>
-                    <button onclick="fecharModal()" class="w-10 h-10 flex items-center justify-center rounded-2xl bg-white border border-slate-100 text-slate-400 hover:text-red-500 hover:border-red-100 transition-all">
+                    <button onclick="fecharModal()" class="w-10 h-10 flex items-center justify-center rounded-2xl bg-white border border-slate-100 text-slate-600 hover:text-red-500 hover:border-red-100 transition-all">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
@@ -662,11 +702,11 @@
         
                 <div class="p-6 border-t border-slate-100 bg-white flex justify-between items-center">
                     <div class="flex flex-col">
-                        <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Soma das Vendas</span>
+                        <span class="text-[9px] font-black text-slate-600 uppercase tracking-widest">Soma das Vendas</span>
                         <span id="modal-contagem-vendas" class="text-[10px] font-bold text-slate-500">0 itens</span>
                     </div>
                     <div class="text-right">
-                        <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1">Total do Lote</span>
+                        <span class="text-[9px] font-black text-slate-600 uppercase tracking-widest block mb-1">Total do Lote</span>
                         <span id="modal-total-lote" class="text-xl font-black text-emerald-600 tracking-tighter"></span>
                     </div>
                 </div>
@@ -679,7 +719,7 @@
             <div class="relative bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
                 <div class="p-6 border-b border-slate-100 flex justify-between items-center">
                     <h3 class="text-xl font-black text-slate-800 tracking-tighter">Gestão de Produto</h3>
-                    <button onclick="closeModalProduto()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
+                    <button onclick="closeModalProduto()" class="text-slate-600 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
                 </div>
         
                 <form id="form-produto" onsubmit="saveNewProduto(event)" class="p-6">
@@ -712,14 +752,26 @@
                                 <label class="block text-xs font-bold text-slate-500 uppercase mb-1 ml-2">Associar Banners</label>
                                 <div id="banners-checklist-container" 
                                      class="flex-1 min-h-[120px] px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 overflow-y-auto space-y-2">
-                                    <p class="text-[10px] text-slate-400 italic text-center mt-4">Carregando banners...</p>
+                                    <p class="text-[10px] text-slate-600 italic text-center mt-4">Carregando banners...</p>
                                 </div>
                             </div>
                         </div>
         
                         <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">URL da Imagem</label>
-                            <input type="text" id="prod-imagem" class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500" placeholder="https://...">
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Capa do Cartão (Upload)</label>
+                            <div class="flex items-center gap-3">
+                                <label for="prod-imagem-file" class="flex-1 cursor-pointer group">
+                                    <div class="w-full px-4 py-2 rounded-xl border-2 border-dashed border-slate-200 group-hover:border-blue-400 bg-slate-50 transition-all flex items-center justify-center gap-2 text-slate-500">
+                                        <i class="fa-solid fa-cloud-arrow-up text-blue-500"></i>
+                                        <span id="file-name-display" class="text-sm truncate">Selecionar imagem...</span>
+                                    </div>
+                                    <input type="file" id="prod-imagem-file" accept="image/*" class="hidden" onchange="updateFileName(this)">
+                                </label>
+                                <div id="upload-preview" class="w-12 h-10 rounded-lg bg-slate-100 border border-slate-200 overflow-hidden hidden">
+                                    <img id="img-mini-preview" src="" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <input type="hidden" id="prod-imagem-url-hidden">
                         </div>
         
                         <div class="pt-2">
@@ -759,38 +811,38 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 border-l-4 border-l-blue-500">
                     <div class="flex justify-between items-start mb-2">
-                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Movimentação Bruta</p>
+                        <p class="text-[10px] font-black text-slate-600 uppercase tracking-widest">Movimentação Bruta</p>
                         <i class="fa-solid fa-money-bill-transfer text-blue-500/20 text-xl"></i>
                     </div>
                     <h3 id="conc-bruto" class="text-2xl font-black text-slate-800 tabular-nums">R$ 0,00</h3>
-                    <p class="text-[9px] text-slate-400 mt-1">Soma total de todas as vendas</p>
+                    <p class="text-[9px] text-slate-600 mt-1">Soma total de todas as vendas</p>
                 </div>
             
                 <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 border-l-4 border-l-purple-500">
                     <div class="flex justify-between items-start mb-2">
-                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Comissões (Receita)</p>
+                        <p class="text-[10px] font-black text-slate-600 uppercase tracking-widest">Comissões (Receita)</p>
                         <i class="fa-solid fa-chart-line text-purple-500/20 text-xl"></i>
                     </div>
                     <h3 id="conc-taxas" class="text-2xl font-black text-purple-600 tabular-nums">R$ 0,00</h3>
-                    <p id="rec-taxas" class="text-[9px] text-slate-400 mt-1">Receita da antecipação:</p>
+                    <p id="rec-taxas" class="text-[9px] text-slate-600 mt-1">Receita da antecipação:</p>
                 </div>
             
                 <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 border-l-4 border-l-amber-500">
                     <div class="flex justify-between items-start mb-2">
-                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">A pagar (Líquido)</p>
+                        <p class="text-[10px] font-black text-slate-600 uppercase tracking-widest">A pagar (Líquido)</p>
                         <i class="fa-solid fa-clock-rotate-left text-amber-500/20 text-xl"></i>
                     </div>
                     <h3 id="conc-aberto" class="text-2xl font-black text-amber-600 tabular-nums">R$ 0,00</h3>
-                    <p class="text-[9px] text-slate-400 mt-1">Transações ainda "Em aberto"</p>
+                    <p class="text-[9px] text-slate-600 mt-1">Transações ainda "Em aberto"</p>
                 </div>
             
                 <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 border-l-4 border-l-emerald-500">
                     <div class="flex justify-between items-start mb-2">
-                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Liquidado (Líquido)</p>
+                        <p class="text-[10px] font-black text-slate-600 uppercase tracking-widest">Liquidado (Líquido)</p>
                         <i class="fa-solid fa-circle-check text-emerald-500/20 text-xl"></i>
                     </div>
                     <h3 id="conc-pago" class="text-2xl font-black text-emerald-600 tabular-nums">R$ 0,00</h3>
-                    <p class="text-[9px] text-slate-400 mt-1">Total de repasses já aprovados</p>
+                    <p class="text-[9px] text-slate-600 mt-1">Total de repasses já aprovados</p>
                 </div>
             </div>
 
@@ -830,7 +882,7 @@
                         </div>
                         
                         <div class="flex gap-1">
-                            <button onclick="clearConciliacaoFilters()" title="Limpar" class="bg-slate-100 text-slate-400 p-2 rounded-xl hover:bg-slate-200 hover:text-slate-600 transition-all">
+                            <button onclick="clearConciliacaoFilters()" title="Limpar" class="bg-slate-100 text-slate-600 p-2 rounded-xl hover:bg-slate-200 hover:text-slate-600 transition-all">
                                 <i class="fa-solid fa-xmark text-xs"></i>
                             </button>
                             <button onclick="loadConciliacao()" class="bg-blue-600 text-white px-4 py-2 rounded-xl font-black text-xs hover:bg-blue-700 transition-all flex items-center gap-2 shadow-lg shadow-blue-100">
@@ -848,7 +900,7 @@
                     <div id="table-conciliacao-body" class="space-y-3">
                         <div class="bg-white p-12 rounded-2xl border border-slate-100 text-center">
                             <i class="fa-solid fa-magnifying-glass text-slate-200 text-3xl mb-3"></i>
-                            <p class="text-slate-400 italic text-sm">Use os filtros acima para listar as transações.</p>
+                            <p class="text-slate-600 italic text-sm">Use os filtros acima para listar as transações.</p>
                         </div>
                     </div>
                 </div>
@@ -867,17 +919,26 @@
                         <i class="fa-solid fa-user-plus"></i> Novo Servidor
                     </button>
                 </div>
+
+                <div class="mb-4">
+                    <div class="relative">
+                        <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-600"></i>
+                        <input type="text" id="input-busca-servidor" placeholder="Buscar por nome, CPF ou cartão..." 
+                            onkeyup="filtrarServidores()"
+                            class="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-blue-500 shadow-sm transition-all">
+                    </div>
+                </div>
         
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
                     <div class="overflow-x-auto">
                         <table class="w-full text-left border-collapse">
                             <thead>
-                                <tr class="bg-slate-50 border-b border-slate-100">
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider w-16">ID</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Servidor</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Cartão / CPF</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Saldo / Limite</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">Ações</th>
+                                <tr class="bg-slate-100 border-b border-slate-100">
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider whitespace-nowrap w-[8%]">ID</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider whitespace-nowrap w-[43%]">Servidor</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider whitespace-nowrap w-[20%]">Cartão / CPF</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider whitespace-nowrap w-[14%]">Saldo / Limite</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider whitespace-nowrap text-right w-[14%]">Ações</th>
                                 </tr>
                             </thead>
                             <tbody id="table-servidores-body" class="divide-y divide-slate-50">
@@ -889,78 +950,92 @@
         </section>
 
         <div id="modal-servidor" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
-            <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModalServidor()"></div>
-            
-            <div class="relative bg-white w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden">
-                <div class="p-6 border-b border-slate-100 flex justify-between items-center">
-                    <h3 class="text-xl font-black text-slate-800 tracking-tighter text-blue-600">Gestão de Servidor</h3>
-                    <button onclick="closeModalServidor()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
-                </div>
-        
-                <form id="form-servidor" onsubmit="saveNewServidor(event)" class="p-6 grid grid-cols-2 gap-4">
-                    <input type="hidden" id="servidor-id-edit">
-                    
-                    <div class="col-span-2">
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Nome Completo</label>
-                        <input type="text" id="serv-nome" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
-                    </div>
-                
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">CPF</label>
-                        <input type="text" id="serv-cpf" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
-                    </div>
-                
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Número do Cartão</label>
-                        <input type="text" id="serv-cartao" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
-                    </div>
-                
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Limite Disponível (R$)</label>
-                        <input type="number" step="0.01" id="serv-limite" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 font-bold text-blue-600">
-                    </div>
-                
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Usuário de Acesso</label>
-                        <input type="text" id="serv-usuario" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
-                    </div>
-                
-                    <div class="col-span-2">
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Senha de Transação/Acesso</label>
-                        <input type="password" id="serv-senha" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
-                    </div>
-                
-                    <div class="col-span-2">
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Modelo do Cartão</label>
-                        
-                        <div class="flex items-center gap-2">
-                            <div class="flex-1">
-                                <select id="serv-produto-id" onchange="atualizarPreviewCard()" required 
-                                    class="w-full px-3 py-2 rounded-md border border-slate-200 outline-none focus:border-blue-500 bg-white text-sm transition-all">
-                                    <option value="">Selecione o design...</option>
-                                </select>
-                            </div>
-                    
-                            <div id="card-preview-container" class="relative w-16 h-10 bg-slate-50 rounded-sm border border-slate-200 flex items-center justify-center overflow-hidden shrink-0 transition-all shadow-sm">
-                                <img id="card-preview-img" src="" class="hidden w-full h-full object-cover">
-                                <div id="card-preview-placeholder" class="text-slate-300">
-                                    <i class="fa-solid fa-image text-xs"></i>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <input type="hidden" id="serv-imagem-url">
-                        <input type="hidden" id="serv-produto-referencia">
-                    </div>
-                
-                    <div class="col-span-2 pt-4">
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-3 rounded-xl shadow-lg transition-all active:scale-[0.98]">
-                            Salvar Dados do Servidor
-                        </button>
-                    </div>
-                </form>
-            </div>
+    <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModalServidor()"></div>
+    
+    <div class="relative bg-white w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+            <h3 class="text-xl font-black text-slate-800 tracking-tighter text-blue-600">Gestão de Servidor</h3>
+            <button onclick="closeModalServidor()" class="text-slate-600 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
         </div>
+
+        <form id="form-servidor" onsubmit="saveNewServidor(event)" class="p-6 grid grid-cols-2 gap-4">
+            <input type="hidden" id="servidor-id-edit">
+            
+            <div class="col-span-2">
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Nome Completo</label>
+                <input type="text" id="serv-nome" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
+            </div>
+        
+            <div class="col-span-2 lg:col-span-1">
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">CPF</label>
+                <input type="text" 
+                    id="serv-cpf" 
+                    required 
+                    maxlength="14" 
+                    placeholder="000.000.000-00"
+                    inputmode="numeric"
+                    class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 transition-all">
+            </div>
+        
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Número do Cartão</label>
+                <input type="text" id="serv-cartao" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
+            </div>
+        
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Limite Disponível (R$)</label>
+                <input type="number" step="0.01" id="serv-limite" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500 font-bold text-blue-600">
+            </div>
+        
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Usuário de Acesso</label>
+                <input type="text" id="serv-usuario" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
+            </div>
+        
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Senha de Transação/Acesso</label>
+                <input type="password" id="serv-senha" required class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:border-blue-500">
+            </div>
+
+            <div class="flex flex-col justify-center pl-2">
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Status da Conta</label>
+                <label class="relative inline-flex items-center cursor-pointer mt-2">
+                    <input type="checkbox" id="serv-ativo" class="sr-only peer" checked>
+                    <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    <span class="ms-3 text-sm font-medium text-slate-600 italic">Ativo</span>
+                </label>
+            </div>
+        
+            <div class="col-span-2">
+                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Modelo do Cartão</label>
+                <div class="flex items-center gap-2">
+                    <div class="flex-1">
+                        <select id="serv-produto-id" onchange="atualizarPreviewCard()" required 
+                            class="w-full px-3 py-2 rounded-md border border-slate-200 outline-none focus:border-blue-500 bg-white text-sm transition-all">
+                            <option value="">Selecione</option>
+                        </select>
+                    </div>
+            
+                    <div id="card-preview-container" class="relative w-16 h-10 bg-slate-50 rounded-sm border border-slate-200 flex items-center justify-center overflow-hidden shrink-0 transition-all shadow-sm">
+                        <img id="card-preview-img" src="" class="hidden w-full h-full object-cover">
+                        <div id="card-preview-placeholder" class="text-slate-300">
+                            <i class="fa-solid fa-image text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+            
+                <input type="hidden" id="serv-imagem-url">
+                <input type="hidden" id="serv-produto-referencia">
+            </div>
+        
+            <div class="col-span-2 pt-4">
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-3 rounded-xl shadow-lg transition-all active:scale-[0.98]">
+                    Salvar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 
         <div id="modal-pagamento-realtime" class="hidden fixed inset-0 z-[10000] items-center justify-center p-4">
             <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-md"></div>
@@ -981,7 +1056,7 @@
                     R$ 0,00
                 </div>
         
-                <button onclick="minimizarPagamentoRemoto()" class="text-slate-400 hover:text-red-500 font-bold text-[10px] uppercase tracking-widest transition-all">
+                <button onclick="minimizarPagamentoRemoto()" class="text-slate-600 hover:text-red-500 font-bold text-[10px] uppercase tracking-widest transition-all">
                     Minimizar monitoramento
                 </button>
             </div>
@@ -999,22 +1074,31 @@
                         <i class="fa-solid fa-store"></i> Novo Lojista
                     </button>
                 </div>
+
+                <div class="mb-4">
+                    <div class="relative">
+                        <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-600"></i>
+                        <input type="text" id="input-busca-lojista" placeholder="Buscar por nome, CNPJ ou usuário..." 
+                            onkeyup="filtrarLojistas()"
+                            class="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-blue-500 shadow-sm transition-all">
+                    </div>
+                </div>
         
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
                     <div class="overflow-x-auto">
                         <table class="w-full text-left border-collapse">
                             <thead>
-                                <tr class="bg-slate-50 border-b border-slate-100">
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider w-16">ID</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Lojista</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">CNPJ / User</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-center">Taxa</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">Ações</th>
+                                <tr class="bg-slate-100 border-b border-slate-100">
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider w-16">ID</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider">Lojista</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider">CNPJ / CPF</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider text-center">Taxa</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider text-right">Ações</th>
                                 </tr>
                             </thead>
                             <tbody id="table-lojistas-body" class="divide-y divide-slate-50">
                                 <tr>
-                                    <td colspan="4" class="px-6 py-10 text-center text-slate-400 italic">
+                                    <td colspan="4" class="px-6 py-10 text-center text-slate-600 italic">
                                         <i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Carregando lojistas...
                                     </td>
                                 </tr>
@@ -1040,9 +1124,9 @@
                     <div class="space-y-4">
                         
                         <div>
-                            <label class="block text-[10px] font-black text-slate-400 uppercase mb-1 ml-1">Contato de Suporte (WhatsApp)</label>
+                            <label class="block text-[10px] font-black text-slate-600 uppercase mb-1 ml-1">Contato de Suporte (WhatsApp)</label>
                             <div class="relative">
-                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-600">
                                     <i class="fa-brands fa-whatsapp"></i>
                                 </span>
                                 <input type="text" id="ajuste-contato" 
@@ -1052,16 +1136,16 @@
                         </div>
 
                         <div>
-                            <label class="block text-[10px] font-black text-slate-400 uppercase mb-1 ml-1">Taxa Avulsa Única (%)</label>
+                            <label class="block text-[10px] font-black text-slate-600 uppercase mb-1 ml-1">Taxa Avulsa Única (%)</label>
                             <div class="relative">
-                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-600">
                                     <i class="fa-solid fa-percent text-xs"></i>
                                 </span>
                                 <input type="number" id="ajuste-taxa-avulsa" 
                                     step="0.01" placeholder="Ex: 5.00"
                                     class="w-full pl-10 pr-4 py-3 bg-slate-50 border-none rounded-xl text-sm font-bold focus:ring-2 focus:ring-blue-500 transition-all">
                             </div>
-                            <p class="mt-2 text-[10px] text-slate-400 italic">* Esta taxa será aplicada a todas as transações marcadas como "Avulsa" na conciliação.</p>
+                            <p class="mt-2 text-[10px] text-slate-600 italic">* Esta taxa será aplicada a todas as transações marcadas como "Avulsa" na conciliação.</p>
                         </div>
 
                     </div>
@@ -1080,7 +1164,7 @@
                 </div>
                 
                 <div class="bg-slate-100 rounded-3xl p-6">
-                    <p class="text-[10px] font-black text-slate-400 uppercase mb-2">Última Alteração</p>
+                    <p class="text-[10px] font-black text-slate-600 uppercase mb-2">Última Alteração</p>
                     <p id="ajuste-last-update" class="text-xs font-bold text-slate-600">--/--/----</p>
                 </div>
             </div>
@@ -1135,7 +1219,7 @@
                 </button>
                 <button onclick="setFinanceiroFilter('Liquidado', this)" 
                     id="filter-liquidado"
-                    class="financeiro-filter-btn px-3 py-1.5 rounded-xl text-[10px] font-black uppercase transition-all text-slate-400">
+                    class="financeiro-filter-btn px-3 py-1.5 rounded-xl text-[10px] font-black uppercase transition-all text-slate-600">
                     Liquidado
                 </button>
             </div>
@@ -1150,12 +1234,12 @@
     
             <div class="flex items-center gap-2">
                 <div class="flex flex-col">
-                    <label class="text-[8px] font-black text-slate-400 uppercase ml-1">Início</label>
+                    <label class="text-[8px] font-black text-slate-600 uppercase ml-1">Início</label>
                     <input type="date" id="servidor-date-start" onchange="loadServidorHistory()" 
                            class="bg-white border-2 border-slate-50 rounded-xl text-[10px] font-bold p-1.5 outline-none focus:border-blue-500 transition-all shadow-sm">
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-[8px] font-black text-slate-400 uppercase ml-1">Fim</label>
+                    <label class="text-[8px] font-black text-slate-600 uppercase ml-1">Fim</label>
                     <input type="date" id="servidor-date-end" onchange="loadServidorHistory()" 
                            class="bg-white border-2 border-slate-50 rounded-xl text-[10px] font-bold p-1.5 outline-none focus:border-blue-500 transition-all shadow-sm">
                 </div>
@@ -1242,7 +1326,7 @@
                 
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                     <div>
-                        <h1 class="text-3xl font-black text-slate-800 tracking-tighter">Administradores</h1>
+                        <h1 class="text-3xl font-black text-slate-800 tracking-tighter">Usuários</h1>
                         <p class="text-slate-500 text-sm">Gerencie quem tem acesso total ao sistema.</p>
                     </div>
                     <button onclick="openModalAdmin()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-200">
@@ -1255,17 +1339,17 @@
                         <table class="w-full text-left border-collapse">
                             <thead>
                                 <thead>
-                                    <tr class="bg-slate-50 border-b border-slate-100">
-                                        <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider w-20">ID</th>
-                                        <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Administrador</th>
-                                        <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Login</th>
-                                        <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">Ações</th>
+                                    <tr class="bg-slate-100 border-b border-slate-100">
+                                        <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider w-20">ID</th>
+                                        <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider">Administrador</th>
+                                        <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider">Login</th>
+                                        <th class="px-6 py-4 text-xs font-bold text-slate-600 uppercase tracking-wider text-right">Ações</th>
                                     </tr>
                                 </thead>
                             </thead>
                             <tbody id="table-admins-body" class="divide-y divide-slate-50">
                                 <tr>
-                                    <td colspan="3" class="px-6 py-10 text-center text-slate-400 italic">
+                                    <td colspan="3" class="px-6 py-10 text-center text-slate-600 italic">
                                         <i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Carregando administradores...
                                     </td>
                                 </tr>
@@ -1304,32 +1388,32 @@
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
                 <div class="bg-white p-4 rounded-2xl border shadow-sm">
-                    <p class="text-[10px] font-bold text-slate-400 uppercase">Faturamento Bruto</p>
+                    <p class="text-[10px] font-bold text-slate-600 uppercase">Faturamento Bruto</p>
                     <p id="stats-faturamento" class="text-lg font-black text-slate-800">R$ 0,00</p>
                 </div>
                 <div class="bg-white p-4 rounded-2xl border shadow-sm">
-                    <p class="text-[10px] font-bold text-slate-400 uppercase">Líquido Estimado</p>
+                    <p class="text-[10px] font-bold text-slate-600 uppercase">Líquido Estimado</p>
                     <p id="stats-liquido" class="text-lg font-black text-emerald-600">R$ 0,00</p>
                 </div>
                 <div class="bg-white p-4 rounded-2xl border shadow-sm">
-                    <p class="text-[10px] font-bold text-slate-400 uppercase">Aprovadas</p>
+                    <p class="text-[10px] font-bold text-slate-600 uppercase">Aprovadas</p>
                     <p id="stats-aprovadas" class="text-lg font-black text-slate-800">0</p>
                 </div>
                 <div class="bg-white p-4 rounded-2xl border shadow-sm">
-                    <p class="text-[10px] font-bold text-slate-400 uppercase">Canceladas</p>
+                    <p class="text-[10px] font-bold text-slate-600 uppercase">Canceladas</p>
                     <p id="stats-recusadas" class="text-lg font-black text-red-500">0</p>
                 </div>
             </div>
         
             <div class="flex flex-row justify-end items-center gap-2 pb-2">
     <div class="flex flex-col">
-        <label class="text-[9px] font-black text-slate-400 uppercase ml-1 mb-0.5 text-right">Início</label>
+        <label class="text-[9px] font-black text-slate-600 uppercase ml-1 mb-0.5 text-right">Início</label>
         <input type="date" id="filter-date-start" onchange="loadLojistaHistory()" 
                class="bg-white border-2 border-slate-100 rounded-xl text-[10px] md:text-xs font-bold p-2 outline-none focus:border-blue-500 transition-all w-[115px] md:w-auto">
     </div>
 
     <div class="flex flex-col">
-        <label class="text-[9px] font-black text-slate-400 uppercase ml-1 mb-0.5 text-right">Fim</label>
+        <label class="text-[9px] font-black text-slate-600 uppercase ml-1 mb-0.5 text-right">Fim</label>
         <input type="date" id="filter-date-end" onchange="loadLojistaHistory()" 
                class="bg-white border-2 border-slate-100 rounded-xl text-[10px] md:text-xs font-bold p-2 outline-none focus:border-blue-500 transition-all w-[115px] md:w-auto">
     </div>
@@ -1379,10 +1463,10 @@ function updateActiveNavLink(clickedElement) {
     const navButtons = document.querySelectorAll('#sidebar-nav button');
     navButtons.forEach(btn => {
         btn.classList.remove('bg-blue-600', 'text-white', 'shadow-lg');
-        btn.classList.add('text-slate-400', 'hover:bg-white/10');
+        btn.classList.add('text-slate-600', 'hover:bg-white/10');
     });
     clickedElement.classList.add('bg-blue-600', 'text-white', 'shadow-lg');
-    clickedElement.classList.remove('text-slate-400');
+    clickedElement.classList.remove('text-slate-600');
 }
 
 
@@ -1642,7 +1726,7 @@ async function logout() {
     const menuButtons = [
         'btn-pdv', 'btn-history', 'btn-servidor-card', 
         'btn-admin-users', 'btn-admin-servidores', 'btn-admin-lojistas',
-        'btn-admin-produtos', 'btn-admin-ajustes', 'btn-admin-conciliacao'
+        'btn-admin-produtos', 'btn-admin-pagamentos', 'btn-admin-alertas', 'btn-admin-ajustes', 'btn-admin-conciliacao'
     ];
 
     menuButtons.forEach(id => {
@@ -1730,6 +1814,7 @@ async function iniciarPainelServidor() {
         'btn-admin-ajustes': false,
         'btn-admin-pagamentos': false,
         'btn-admin-alertas': false,
+        'btn-repasses': false,
     };
 
     Object.entries(elementsToToggle).forEach(([id, show]) => {
@@ -1889,6 +1974,7 @@ async function gerenciarExibicaoBanners(tipoUsuario = null) {
         setTimeout(async () => {
             const modal = document.getElementById('modal-banner-cliente');
             const img = document.getElementById('img-banner-cliente');
+            const container = modal.querySelector('div');
             const linkTag = document.getElementById('link-banner-cliente');
             
             if (!modal || !img) return;
@@ -1928,6 +2014,7 @@ async function gerenciarExibicaoBanners(tipoUsuario = null) {
             // Mostra o modal
             modal.classList.remove('-translate-y-full');
             modal.classList.add('translate-y-0');
+            container.classList.add('shadow-2xl', 'border', 'border-slate-100');
 
             // Atualiza o objeto de log
             let log = registroAvisos[bannerSelecionado.titulo] || { data: hoje, visualizacoes: 0 };
@@ -2006,11 +2093,11 @@ async function setFinanceiroFilter(tipo, element) {
     // Reset visual dos botões
     document.querySelectorAll('.financeiro-filter-btn').forEach(btn => {
         btn.classList.remove('bg-white', 'text-blue-600', 'shadow-sm');
-        btn.classList.add('text-slate-400');
+        btn.classList.add('text-slate-600');
     });
     
     // Ativa o botão clicado
-    element.classList.remove('text-slate-400');
+    element.classList.remove('text-slate-600');
     element.classList.add('bg-white', 'text-blue-600', 'shadow-sm');
     
     // 1. Recarrega a lista de histórico
@@ -2086,7 +2173,7 @@ async function loadServidorHistory() {
                 <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-3">
                     <i class="fa-solid fa-calendar-xmark text-slate-300 text-2xl"></i>
                 </div>
-                <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest">
+                <p class="text-slate-600 text-[10px] font-black uppercase tracking-widest">
                     Nenhuma transação ${currentFinanceiroFilter.toLowerCase()} neste período
                 </p>
             </div>`;
@@ -2109,7 +2196,7 @@ async function loadServidorHistory() {
                 </div>
                 <div>
                     <p class="font-black text-slate-800 text-sm leading-tight">${nomeEstabelecimento}</p>
-                    <p class="text-[9px] text-slate-400 font-bold uppercase tracking-tighter">
+                    <p class="text-[9px] text-slate-600 font-bold uppercase tracking-tighter">
                         ${item.data.split('T')[0].split('-').reverse().join('/')} ${item.data.split('T')[1].substring(0, 5)}
                     </p>
                 </div>
@@ -2165,7 +2252,7 @@ function renderizarCompraPendente(transacao) {
             </button>
 
             <button onclick="recusarCompra('${transacao.id}')" 
-                    class="w-full py-2 text-slate-400 font-bold text-[10px] uppercase tracking-widest hover:text-red-500 transition-colors">
+                    class="w-full py-2 text-slate-600 font-bold text-[10px] uppercase tracking-widest hover:text-red-500 transition-colors">
                 RECUSAR COMPRA
             </button>
         </div>
@@ -2364,38 +2451,48 @@ async function gerenciarPendenciasServidor(isManual = false) {
 
 // --- 4. LÓGICA DO PAINEL DO LOJISTA (MAQUININHA) ---
 function iniciarPainelLojista() {
-    // 1. Esconde o login
+    // 1. Esconde a tela de login
     document.getElementById('view-login').classList.add('hidden');
     
-    // 2. Controla visibilidade dos botões na Sidebar
-    const btnPdv = document.getElementById('btn-pdv'); // Captura o botão PDV
-    btnPdv?.classList.remove('hidden');
-    
-    document.getElementById('btn-history')?.classList.remove('hidden');
-    document.getElementById('btn-repasses').classList.remove('hidden');
-    
+    // 2. Captura os botões da Sidebar
+    const btnPdv = document.getElementById('btn-pdv');
+    const btnHistory = document.getElementById('btn-history');
+    const btnRepasses = document.getElementById('btn-repasses');
     const btnServidor = document.getElementById('btn-servidor-card');
+
+    // --- LOGICA DE BLOQUEIO DO PDV (ATIVO/INATIVO) ---
+    if (currentUser.ativo === false) {
+        // Se inativo: Esconde o botão PDV e avisa
+        btnPdv?.classList.add('hidden');
+        showMsg("Por favor, entre em contato com o suporte", "error");
+        // Define uma tela inicial segura (Histórico), já que o PDV está bloqueado
+        showView('history'); 
+        // Simula o clique no botão de histórico
+        document.getElementById('btn-history')?.click();
+    } else {
+        // Se ativo: Garante que o PDV apareça e seja a tela inicial
+        btnPdv?.classList.remove('hidden');
+        showView('pdv');
+        if (btnPdv) updateActiveNavLink(btnPdv);
+    }
+
+    // 3. Outras permissões padrão do Lojista
+    btnHistory?.classList.remove('hidden');
+    btnRepasses?.classList.remove('hidden');
     if (btnServidor) btnServidor.classList.add('hidden');
 
-    // --- ATIVAÇÃO VISUAL DO MENU ---
-    // Faz o botão do PDV ficar azul/destacado
-    if (btnPdv) updateActiveNavLink(btnPdv);
-
-    // 3. ATUALIZA OS CABEÇALHOS COM O NOME DA LOJA
+    // 4. ATUALIZA OS CABEÇALHOS COM O NOME DA LOJA
     const nomeLoja = currentUser.nome || 'Estabelecimento';
-    
     const subPdv = document.getElementById('display-nome-lojista-pdv');
-    if (subPdv) subPdv.innerText = nomeLoja;
-
     const subHistory = document.getElementById('display-nome-lojista-history');
+
+    
+    if (subPdv) subPdv.innerText = nomeLoja;
     if (subHistory) subHistory.innerText = nomeLoja;
 
-    // 4. Configura as datas padrão
-    configurarDatasFiltro();
-
-    // 5. Define a tela inicial
-    showView('pdv');
-    gerenciarExibicaoBanners('lojista');
+    // 5. Configurações Finais
+    if (typeof configurarDatasFiltro === "function") configurarDatasFiltro();
+    if (typeof gerenciarExibicaoBanners === "function") gerenciarExibicaoBanners('lojista');
 }
 
 function openQuickTransaction(type, id) {
@@ -2407,7 +2504,7 @@ function openQuickTransaction(type, id) {
     
     modal.innerHTML = `
         <div class="bg-white w-full max-w-md rounded-[2.5rem] p-8 relative shadow-2xl transform transition-all scale-100">
-            <button onclick="this.closest('#quick-modal').remove()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600">
+            <button onclick="this.closest('#quick-modal').remove()" class="absolute top-6 right-6 text-slate-600 hover:text-slate-600">
                 <i class="fas fa-times text-xl"></i>
             </button>
             
@@ -2428,7 +2525,7 @@ function openQuickTransaction(type, id) {
                 </div>
 
                 <div>
-                    <label class="text-[10px] font-black uppercase text-slate-400 ml-1">Valor</label>
+                    <label class="text-[10px] font-black uppercase text-slate-600 ml-1">Valor</label>
                     <input type="number" name="valor" step="0.01" class="w-full bg-slate-50 border-0 rounded-2xl p-4 font-black text-xl outline-none focus:ring-2 focus:ring-emerald-500" placeholder="0,00" required>
                 </div>
 
@@ -2514,27 +2611,36 @@ async function updatePDVDisplay() {
 async function confirmKey() {
     const visorProcessando = document.getElementById('pdv-processing');
     
-    // PASSO 1: Identificar Cartão (Sem alterações)
-    if (pdvStep === 1) {
-        if (pdvInputBuffer.length < 4) return showMsg("Digite o cartão", "error");
-        visorProcessando.classList.remove('hidden');
-        const { data, error } = await _supabase.from('servidores').select('*').eq('cartao', pdvInputBuffer).maybeSingle();
-        visorProcessando.classList.add('hidden');
+    // PASSO 1: Identificar Cartão
+if (pdvStep === 1) {
+    if (pdvInputBuffer.length < 3) return showMsg("Digite o cartão", "error");
+    
+    visorProcessando.classList.remove('hidden');
+    const { data, error } = await _supabase.from('servidores').select('*').eq('cartao', pdvInputBuffer).maybeSingle();
+    visorProcessando.classList.add('hidden');
 
-        if (data) {
-            tempServerData = data;
-            pdvStep = 2;
-            pdvInputBuffer = "";
-            document.getElementById('pdv-step-1').classList.add('hidden');
-            document.getElementById('pdv-step-2').classList.remove('hidden');
-            document.getElementById('pdv-client-name').innerText = data.nome;
+    if (data) {
+        // --- NOVA VERIFICAÇÃO DE STATUS ---
+        if (data.ativo === false) {
+            showMsg("Por favor, procure a administradora do cartão", "error");
+            pdvInputBuffer = ""; // Limpa o buffer para nova tentativa
             updatePDVDisplay();
-        } else {
-            showMsg("Cartão não encontrado", "error");
-            pdvInputBuffer = "";
-            updatePDVDisplay();
+            return; // Encerra a função aqui para não avançar para o Step 2
         }
-    } 
+
+        tempServerData = data;
+        pdvStep = 2;
+        pdvInputBuffer = "";
+        document.getElementById('pdv-step-1').classList.add('hidden');
+        document.getElementById('pdv-step-2').classList.remove('hidden');
+        document.getElementById('pdv-client-name').innerText = data.nome;
+        updatePDVDisplay();
+    } else {
+        showMsg("Cartão não encontrado", "error");
+        pdvInputBuffer = "";
+        updatePDVDisplay();
+    }
+} 
     // PASSO 2: Definir Valor (Sem alterações)
     else if (pdvStep === 2) {
     const valorVenda = parseFloat(pdvInputBuffer) / 100;
@@ -2848,7 +2954,7 @@ function renderizarCards(transacoes) {
     container.innerHTML = "";
 
     if (transacoes.length === 0) {
-        container.innerHTML = `<div class="text-center py-10 text-slate-400 font-medium italic">Nenhuma transação encontrada.</div>`;
+        container.innerHTML = `<div class="text-center py-10 text-slate-600 font-medium italic">Nenhuma transação encontrada.</div>`;
         return;
     }
 
@@ -2873,11 +2979,11 @@ function renderizarCards(transacoes) {
         container.innerHTML += `
             <div class="bg-white rounded-2xl p-4 mb-3 border border-slate-100 shadow-sm flex items-center justify-between hover:border-blue-100 transition-all group/card">
                 <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full ${isCancelada || isRecusada ? 'bg-slate-100 text-slate-400' : 'bg-blue-50 text-blue-600'} flex items-center justify-center transition-colors group-hover/card:bg-blue-600 group-hover/card:text-white">
+                    <div class="w-10 h-10 rounded-full ${isCancelada || isRecusada ? 'bg-slate-100 text-slate-600' : 'bg-blue-50 text-blue-600'} flex items-center justify-center transition-colors group-hover/card:bg-blue-600 group-hover/card:text-white">
                         <i class="fa-solid fa-receipt text-sm"></i>
                     </div>
                     <div>
-                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-tighter">
+                        <p class="text-[10px] font-black text-slate-600 uppercase tracking-tighter">
                             ${t.data.split('T')[0].split('-').reverse().join('/')} ${t.data.split('T')[1].substring(0, 5)}
                         </p>
                         <h4 class="text-xs font-black text-slate-700 uppercase tracking-tight">
@@ -2989,7 +3095,7 @@ async function loadAdminsList() {
     const tbody = document.getElementById('table-admins-body');
     if (!tbody) return;
 
-    tbody.innerHTML = `<tr><td colspan="4" class="px-6 py-10 text-center text-slate-400 italic"><i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Atualizando lista...</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="4" class="px-6 py-10 text-center text-slate-600 italic"><i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Atualizando lista...</td></tr>`;
 
     try {
         const { data: admins, error } = await _supabase
@@ -3002,7 +3108,7 @@ async function loadAdminsList() {
         tbody.innerHTML = '';
 
         if (!admins || admins.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="4" class="px-6 py-8 text-center text-slate-400">Nenhum administrador encontrado.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="4" class="px-6 py-8 text-center text-slate-600">Nenhum administrador encontrado.</td></tr>`;
             return;
         }
 
@@ -3102,70 +3208,138 @@ async function deleteAdmin(id) {
 
 async function loadLojistasList() {
     const tbody = document.getElementById('table-lojistas-body');
-    if (!tbody) return;
-
-    // Atualize o colspan para 6 caso tenha adicionado a nova coluna no <thead> do HTML
-    tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-slate-400 italic"><i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Buscando lojistas...</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-10 text-center text-slate-600 italic"><i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Buscando...</td></tr>`;
 
     try {
-        const { data: lojistas, error } = await _supabase
-            .from('lojistas')
-            .select('*')
-            .order('id', { ascending: true });
-
+        const { data: lojistas, error } = await _supabase.from('lojistas').select('*').order('id');
         if (error) throw error;
 
-        window.listaLojistas = lojistas; 
-        tbody.innerHTML = '';
-
-        if (!lojistas || lojistas.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-slate-400">Nenhum lojista cadastrado.</td></tr>`;
-            return;
-        }
-
-        lojistas.forEach(loja => {
-            // Conversão para percentual amigável (ex: 0.03 vira 3.0)
-            const taxaAdm = (parseFloat(loja.taxa || 0) * 100).toFixed(1);
-            const taxaAnt = (parseFloat(loja.antecipacao || 0) * 100).toFixed(1);
-            
-            tbody.innerHTML += `
-                <tr class="hover:bg-slate-50/50 transition-colors border-b border-slate-50 last:border-0">
-                    <td class="px-6 py-4 font-mono font-bold text-blue-600 text-sm">#${loja.id}</td>
-                    <td class="px-6 py-4">
-                        <div class="font-bold text-slate-700">${loja.nome}</div>
-                        <div class="text-[10px] text-slate-400 font-mono italic">User: ${loja.usuario || '---'}</div>
-                    </td>
-                    <td class="px-6 py-4 text-sm text-slate-600 font-medium">${loja.cnpj}</td>
-                    <td class="px-6 py-4">
-                        <div class="flex flex-col gap-1">
-                            <div class="flex items-center justify-between gap-4">
-                                <span class="text-[9px] font-black text-slate-400 uppercase">Adm:</span>
-                                <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-bold">${taxaAdm}%</span>
-                            </div>
-                            <div class="flex items-center justify-between gap-4">
-                                <span class="text-[9px] font-black text-slate-400 uppercase">Ant:</span>
-                                <span class="px-2 py-0.5 rounded bg-purple-50 text-purple-700 text-[10px] font-bold">${taxaAnt}%</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 text-right">
-                        <div class="flex justify-end gap-2">
-                            <button onclick="prepararEdicaoLojista(${loja.id})" class="text-blue-500 hover:bg-blue-50 p-2 rounded-lg transition-all" title="Editar">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button onclick="deleteLojista(${loja.id})" class="text-red-400 hover:bg-red-50 p-2 rounded-lg transition-all" title="Excluir">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            `;
-        });
+        window.listaLojistas = lojistas;
+        renderizarTabelaLojistas(lojistas);
     } catch (err) {
-        console.error("Erro ao carregar lojistas:", err);
-        showMsg("Erro ao carregar lista", "error");
-        tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-red-500 font-bold">Falha ao carregar dados.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-red-500">Erro ao carregar.</td></tr>`;
     }
+}
+
+function renderizarTabelaLojistas(lista) {
+    const tbody = document.getElementById('table-lojistas-body');
+    tbody.innerHTML = '';
+
+    if (!lista || lista.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-slate-600">Nenhum lojista encontrado.</td></tr>`;
+        return;
+    }
+
+    lista.forEach(loja => {
+        const taxaAdm = (parseFloat(loja.taxa || 0) * 100).toFixed(1);
+        const taxaAnt = (parseFloat(loja.antecipacao || 0) * 100).toFixed(1);
+        
+        // Formata o CNPJ/CPF
+        const documentoFormatado = formatarDocumento(loja.cnpj);
+
+        // Verifica se o lojista possui contrato assinado/enviado
+        const temContrato = loja.contrato_url && loja.contrato_url.trim() !== "";
+        
+        tbody.innerHTML += `
+            <tr class="hover:bg-slate-50/50 transition-colors border-b border-slate-50 last:border-0">
+                <td class="px-6 py-4 font-mono font-bold text-blue-600 text-sm">${loja.id}</td>
+                
+                <td class="px-6 py-4">
+                    <div class="font-bold text-slate-700 leading-tight">${loja.nome}</div>
+                    <div class="text-[10px] text-indigo-500 font-black uppercase tracking-tight mt-1">
+                        <i class="fa-solid fa-tag text-[8px] mr-1"></i>${loja.produto_referencia || 'Nenhum Produto'}
+                    </div>
+                </td>
+
+                <td class="px-6 py-4">
+                    <div class="text-[10px] text-slate-600 font-mono italic mb-0.5">Usuário: ${loja.usuario || '---'}</div>
+                    <div class="text-sm text-slate-600 font-medium tracking-tighter">${documentoFormatado}</div>
+                </td>
+
+                <td class="px-6 py-4">
+                    <div class="flex flex-col gap-1">
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-[9px] font-black text-slate-600 uppercase">Adm:</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-bold">${taxaAdm}%</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-[9px] font-black text-slate-600 uppercase">Ant:</span>
+                            <span class="px-2 py-0.5 rounded bg-purple-50 text-purple-700 text-[10px] font-bold">${taxaAnt}%</span>
+                        </div>
+                    </div>
+                </td>
+
+                <td class="px-6 py-4 text-right">
+                    <div class="flex justify-end gap-2">
+                        
+                        ${temContrato ? `
+                            <button onclick="window.open('${loja.contrato_url}', '_blank')" 
+                                    class="text-emerald-500 hover:bg-emerald-50 p-2 rounded-lg transition-all" 
+                                    title="Visualizar Contrato">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        ` : ''}
+
+                        <button onclick="abrirModalContrato('${loja.id}')" 
+                                class="text-indigo-500 hover:bg-indigo-50 p-2 rounded-lg transition-all" 
+                                title="Upload de Contrato">
+                            <i class="fa-solid fa-file-signature"></i>
+                        </button>
+
+                        <button onclick="prepararEdicaoLojista('${loja.id}')" 
+                                class="text-blue-500 hover:bg-blue-50 p-2 rounded-lg transition-all" 
+                                title="Editar">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+
+                        <button onclick="deleteLojista('${loja.id}')" 
+                                class="text-red-400 hover:bg-red-50 p-2 rounded-lg transition-all" 
+                                title="Excluir">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>`;
+    });
+}
+
+function formatarDocumento(doc) {
+    if (!doc) return '---';
+    const s = doc.toString().replace(/\D/g, ''); 
+
+    if (s.length === 11) {
+        // CPF: 000.000.000-00
+        return s.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+    } else if (s.length === 14) {
+        // CNPJ: 00.000.000/0000-00
+        return s.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+    }
+    return doc; // Retorna o valor original caso não tenha 11 ou 14 dígitos
+}
+
+// Adicione esta variável fora da função para persistir o estado do temporizador
+let debounceTimer;
+
+function filtrarLojistas() {
+    // Cancela o timer anterior se o usuário ainda estiver digitando
+    clearTimeout(debounceTimer);
+
+    // Inicia um novo timer de 1 segundo (1000ms)
+    debounceTimer = setTimeout(() => {
+        const termo = document.getElementById('input-busca-lojista').value.toLowerCase();
+        
+        // Verifica se a lista existe para evitar erros
+        if (!window.listaLojistas) return;
+
+        const filtrados = window.listaLojistas.filter(l => 
+            l.nome?.toLowerCase().includes(termo) || 
+            l.cnpj?.includes(termo) || 
+            l.usuario?.toLowerCase().includes(termo) ||
+            l.produto_referencia?.toLowerCase().includes(termo) // NOVA CONDIÇÃO DE FILTRO
+        );
+        
+        renderizarTabelaLojistas(filtrados);
+    }, 500); // Delay de 1 segundo
 }
 
 // Função para abrir o modal em modo de EDIÇÃO
@@ -3215,29 +3389,33 @@ async function editLojista(loja) {
 
 async function saveNewLojista(event) {
     event.preventDefault();
-    const idParaEditar = document.getElementById('loja-id-edit').value;
+
+    // 1. Captura o ID de edição (se houver)
+    const idParaEditar = document.getElementById('loja-id-edit').value.trim();
     
-    // --- LÓGICA IDÊNTICA AO SAVE AJUSTES ---
-    let taxaRaw = document.getElementById('loja-taxa').value;
-    let antRaw = document.getElementById('loja-antecipacao').value;
+    // 2. Tratamento de Taxas
+    let taxaRaw = document.getElementById('loja-taxa').value.replace(',', '.') || "0";
+    let antRaw = document.getElementById('loja-antecipacao').value.replace(',', '.') || "0";
+    let taxaSalvar = parseFloat(taxaRaw) / 100;
+    let antSalvar = parseFloat(antRaw) / 100;
 
-    let taxaSalvar = parseFloat(taxaRaw.toString().replace(',', '.'));
-    let antSalvar = parseFloat(antRaw.toString().replace(',', '.'));
+    // 3. Montagem do objeto e Limpeza de Documento
+    const docLimpo = document.getElementById('loja-cnpj').value.replace(/\D/g, '');
 
-    // Converte para decimal se for maior que 1 (ex: 4 vira 0.04)
-    if (taxaSalvar > 1) taxaSalvar = taxaSalvar / 100;
-    if (antSalvar > 1) antSalvar = antSalvar / 100;
-    // ---------------------------------------
+    if (docLimpo.length !== 11 && docLimpo.length !== 14) {
+        showMsg("O documento deve ter 11 (CPF) ou 14 (CNPJ) dígitos!", "error");
+        return;
+    }
 
     const dados = {
-        nome: document.getElementById('loja-nome').value,
-        cnpj: document.getElementById('loja-cnpj').value,
+        nome: document.getElementById('loja-nome').value.trim(),
+        cnpj: docLimpo,
         taxa: taxaSalvar,
         antecipacao: antSalvar,
-        usuario: document.getElementById('loja-usuario').value,
+        usuario: document.getElementById('loja-usuario').value.trim(),
         senha: document.getElementById('loja-senha').value,
         produto_referencia: document.getElementById('loja-produto-referencia').value,
-        ativo: true
+        ativo: document.getElementById('loja-ativo').checked
     };
 
     if (!dados.produto_referencia) {
@@ -3245,22 +3423,42 @@ async function saveNewLojista(event) {
         return;
     }
 
-    let error;
-    if (idParaEditar) {
-        const result = await _supabase.from('lojistas').update(dados).eq('id', idParaEditar);
-        error = result.error;
-    } else {
-        const result = await _supabase.from('lojistas').insert([dados]);
-        error = result.error;
-    }
+    try {
+        // 4. Validação de Duplicidade por CNPJ
+        let query = _supabase.from('lojistas').select('id').eq('cnpj', dados.cnpj);
+        if (idParaEditar) {
+            query = query.neq('id', idParaEditar);
+        }
 
-    if (error) {
-        showMsg("Erro ao salvar dados", "error");
-        console.error(error);
-    } else {
+        const { data: existente, error: errExistente } = await query.maybeSingle();
+        if (errExistente) throw errExistente;
+        if (existente) {
+            showMsg("Este documento já está cadastrado para outro lojista!", "error");
+            return;
+        }
+
+        // 5. Execução (Insert ou Update)
+        let response;
+        if (idParaEditar) {
+            // EDITAR: O ID vai apenas no filtro .eq(), não dentro do objeto 'dados'
+            response = await _supabase.from('lojistas').update(dados).eq('id', idParaEditar);
+        } else {
+            // NOVO: IMPORTANTE! O objeto 'dados' não possui a chave 'id'.
+            // O PostgreSQL usará a SEQUENCE para gerar o ID 5, 6, 7... automaticamente.
+            response = await _supabase.from('lojistas').insert([dados]);
+        }
+
+        if (response.error) throw response.error;
+
+        // 6. Feedback e Limpeza
         showMsg(idParaEditar ? "Lojista atualizado!" : "Lojista cadastrado!", "success");
         closeModalLojista();
-        loadLojistasList();
+        
+        if (typeof loadLojistasList === "function") loadLojistasList();
+
+    } catch (err) {
+        console.error("Erro Supabase:", err);
+        showMsg("Erro ao salvar: " + (err.message || "Tente novamente."), "error");
     }
 }
 
@@ -3291,65 +3489,159 @@ function atualizarPreviewLojista() {
 }
 
 
+async function prepararEdicaoProduto(id) {
+    console.log("Buscando produto para edição. ID recebido:", id);
+
+    // 1. CONVERSÃO CRÍTICA: Garante que o ID seja comparado como número
+    const idCorreto = parseInt(id, 10);
+    
+    // 2. Busca o produto na lista global
+    const p = window.listaProdutos.find(item => item.id === idCorreto);
+    
+    if (!p) {
+        console.error("ERRO: Produto não encontrado na lista. ID procurado:", idCorreto);
+        if (typeof showMsg === "function") showMsg("Erro ao carregar dados do produto.", "error");
+        return; 
+    }
+
+    console.log("Produto encontrado com sucesso:", p.descricao);
+
+    // 3. Abre o modal e ajusta o título
+    const modal = document.getElementById('modal-produto');
+    if (modal) {
+        modal.classList.remove('hidden');
+    }
+    document.querySelector('#modal-produto h3').innerText = "Editar Produto";
+    
+    // 4. Preenche os campos de texto básicos
+    document.getElementById('produto-id-edit').value = p.id || '';
+    document.getElementById('prod-descricao').value = p.descricao || '';
+    document.getElementById('prod-cidade').value = p.cidade || '';
+    document.getElementById('prod-responsavel').value = p.responsavel || '';
+    document.getElementById('prod-contato').value = p.contato || '';
+
+    // 5. Trata a exibição da Imagem (Input hidden + Preview visual)
+    document.getElementById('prod-imagem-url-hidden').value = p.imagem || '';
+    const previewContainer = document.getElementById('upload-preview');
+    const imgPreview = document.getElementById('img-mini-preview');
+    const fileNameDisplay = document.getElementById('file-name-display');
+
+    if (p.imagem) {
+        imgPreview.src = p.imagem;
+        previewContainer.classList.remove('hidden');
+        fileNameDisplay.innerText = "Imagem atual carregada";
+    } else {
+        imgPreview.src = '';
+        previewContainer.classList.add('hidden');
+        fileNameDisplay.innerText = "Selecionar imagem...";
+    }
+
+    // 6. Carrega os Banners e marca os checkboxes correspondentes
+    try {
+        // AWAIT OBRIGATÓRIO: Espera o HTML dos banners ser injetado no modal
+        await loadBannersNoChecklist();
+
+        // Aguarda um pequeno tempo para garantir que os elementos foram criados no DOM
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        const checkboxes = document.querySelectorAll('.banner-checkbox');
+        console.log("Total de banners encontrados no DOM:", checkboxes.length);
+
+        if (p.banner_ids) {
+            // Garante que p.banner_ids seja um array tratável
+            const arrayBannersDoProduto = Array.isArray(p.banner_ids) ? p.banner_ids : [p.banner_ids];
+            
+            checkboxes.forEach(cb => {
+                // Compara convertendo ambos para String para evitar conflitos de Tipo
+                const bannerIdDoCheckbox = String(cb.value);
+                const estaMarcado = arrayBannersDoProduto.some(id => String(id) === bannerIdDoCheckbox);
+                
+                cb.checked = estaMarcado;
+                
+                if (estaMarcado) {
+                    console.log("Banner ID " + bannerIdDoCheckbox + " marcado automaticamente.");
+                }
+            });
+        }
+    } catch (err) {
+        console.error("Erro ao carregar/marcar banners durante a edição:", err);
+    }
+}
+
 
 async function prepararEdicaoLojista(id) {
-    // Busca o objeto completo na nossa lista global
-    const loja = window.listaLojistas.find(l => l.id === id);
-    if (!loja) return;
+    console.log("Tentando editar lojista ID:", id, "Tipo:", typeof id);
 
-    // 1. Aguarda o preenchimento dos selects (essencial para que as options existam)
+    // 1. CORREÇÃO DE TIPO: Garante que estamos comparando números com números
+    const idCorreto = parseInt(id, 10);
+    
+    // Busca na lista global
+    const loja = window.listaLojistas.find(l => parseInt(l.id, 10) === idCorreto);
+    
+    if (!loja) {
+        console.error("ERRO: Lojista não encontrado na lista. ID procurado:", idCorreto);
+        return;
+    }
+
+    console.log("Lojista encontrado:", loja.nome);
+
+    // 2. Aguarda o preenchimento dos selects (Garante que os options existem no DOM)
     await popularSelectProdutos();
 
-    // 2. Abre o modal
-    document.getElementById('modal-lojista').classList.remove('hidden');
-    document.querySelector('#modal-lojista h3').innerText = "Editar Lojista";
+    // 3. Abre o modal
+    const modal = document.getElementById('modal-lojista');
+    if (modal) modal.classList.remove('hidden');
     
-    // 3. Preenche os campos de texto e identifica IDs
+    const titulo = document.querySelector('#modal-lojista h3');
+    if (titulo) titulo.innerText = "Editar Lojista";
+    
+    // 4. Preenche os campos de texto
     document.getElementById('loja-id-edit').value = loja.id;
     document.getElementById('loja-nome').value = loja.nome || "";
     document.getElementById('loja-cnpj').value = loja.cnpj || "";
     
-    // --- LÓGICA DE CONVERSÃO DE TAXAS (Baseada na tela de Ajustes) ---
-    
-    // Tratando a Taxa Administrativa (Ex: 0.075 -> 7.5)
-    const taxaBase = parseFloat(loja.taxa?.toString().replace(',', '.') || 0);
-    const taxaExibicao = taxaBase < 1 ? (taxaBase * 100).toFixed(2) : taxaBase;
-    // O parseFloat aqui serve para remover zeros desnecessários, transformando 4.00 em 4
-    document.getElementById('loja-taxa').value = parseFloat(taxaExibicao);
+    // --- LÓGICA DE CONVERSÃO DE TAXAS ---
+    // Usamos parseFloat e garantimos que o valor seja tratado como decimal
+    const taxaBase = parseFloat(String(loja.taxa || 0).replace(',', '.'));
+    document.getElementById('loja-taxa').value = taxaBase < 1 ? (taxaBase * 100).toFixed(2) : taxaBase.toFixed(2);
 
-    // Tratando a Antecipação (Ex: 0.04 -> 4)
-    const antBase = parseFloat(loja.antecipacao?.toString().replace(',', '.') || 0);
-    const antExibicao = antBase < 1 ? (antBase * 100).toFixed(2) : antBase;
-    document.getElementById('loja-antecipacao').value = parseFloat(antExibicao);
+    const antBase = parseFloat(String(loja.antecipacao || 0).replace(',', '.'));
+    document.getElementById('loja-antecipacao').value = antBase < 1 ? (antBase * 100).toFixed(2) : antBase.toFixed(2);
     
-    // ----------------------------------------------------------------
-
-    // Campos de Acesso
     document.getElementById('loja-usuario').value = loja.usuario || "";
     document.getElementById('loja-senha').value = loja.senha || "";
+    
+    // --- STATUS ATIVO ---
+    const switchAtivo = document.getElementById('loja-ativo');
+    if (switchAtivo) {
+        switchAtivo.checked = Boolean(loja.ativo);
+    }
 
-    // 4. Sincroniza o Produto Selecionado
+    // 5. Sincroniza o Produto Selecionado
     const select = document.getElementById('loja-produto-id');
     const hiddenRef = document.getElementById('loja-produto-referencia');
 
-    if (loja.produto_referencia) {
-        // Percorre as opções para encontrar a que tem o texto igual à referência
+    if (select && loja.produto_referencia) {
+        // Encontra a opção pelo texto
+        let encontrada = false;
         for (let i = 0; i < select.options.length; i++) {
             if (select.options[i].text === loja.produto_referencia) {
                 select.selectedIndex = i;
-                
-                // Salva no hidden para manter consistência
-                hiddenRef.value = loja.produto_referencia;
-                
-                // 5. Dispara o preview visual do mini cartão
-                atualizarPreviewLojista();
+                if (hiddenRef) hiddenRef.value = loja.produto_referencia;
+                encencontrada = true;
                 break;
             }
         }
-    } else {
-        // Se não houver referência, reseta o select e o preview
+        
+        // Se não achou por texto, reseta
+        if (!encencontrada) select.selectedIndex = 0;
+        
+        // Chama a função de preview se ela existir
+        if (typeof atualizarPreviewLojista === "function") {
+            atualizarPreviewLojista();
+        }
+    } else if (select) {
         select.selectedIndex = 0;
-        atualizarPreviewLojista();
     }
 }
 
@@ -3379,96 +3671,107 @@ function formatarMoeda(valor) {
 
 async function loadServidoresList() {
     const tbody = document.getElementById('table-servidores-body');
-    if (!tbody) return;
+    tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-slate-600 italic">Carregando...</td></tr>`;
 
-    tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-10 text-center text-slate-400 italic"><i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Atualizando saldos...</td></tr>`;
+    const { data: servidores, error: errS } = await _supabase.from('servidores').select('*').order('nome');
+    const { data: transacoes, error: errT } = await _supabase.from('transacoes').select('servidor_cartao, valor').eq('status', 'APROVADA').eq('financeiro', 'Em aberto');
 
-    try {
-        const [resServidores, resTransacoes] = await Promise.all([
-            _supabase.from('servidores').select('*').order('nome'),
-            _supabase.from('transacoes')
-                .select('servidor_cartao, valor')
-                .eq('status', 'APROVADA')
-                .eq('financeiro', 'Em aberto')
-        ]);
+    if (errS || errT) return showMsg("Erro ao carregar dados", "error");
 
-        if (resServidores.error) throw resServidores.error;
-        if (resTransacoes.error) throw resTransacoes.error;
+    window.gastosPorCartao = transacoes.reduce((acc, t) => {
+        acc[t.servidor_cartao] = (acc[t.servidor_cartao] || 0) + (parseFloat(t.valor) || 0);
+        return acc;
+    }, {});
 
-        const servidores = resServidores.data;
-        const transacoes = resTransacoes.data;
+    window.listaServidores = servidores;
+    renderizarTabelaServidores(window.listaServidores);
+}
 
-        const gastosPorCartao = transacoes.reduce((acc, t) => {
-            const cartao = t.servidor_cartao;
-            acc[cartao] = (acc[cartao] || 0) + (parseFloat(t.valor) || 0);
-            return acc;
-        }, {});
+function renderizarTabelaServidores(lista) {
+    const tbody = document.getElementById('table-servidores-body');
+    tbody.innerHTML = '';
 
-        window.listaServidores = servidores;
-        tbody.innerHTML = '';
-
-        if (!servidores || servidores.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-slate-400">Nenhum servidor encontrado.</td></tr>`;
-            return;
-        }
-
-        servidores.forEach(s => {
-            const limite = parseFloat(s.limite || 0);
-            const gastoTotal = gastosPorCartao[s.cartao] || 0;
-            const saldoReal = limite - gastoTotal;
-            const img = s.imagem_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(s.nome)}&background=random`;
-
-            // Lógica do Toggle: verde se true, cinza se false
-            const isFisico = s.cartaoFisico === true;
-
-            tbody.innerHTML += `
-    <tr class="hover:bg-slate-50/50 transition-colors border-b border-slate-100 last:border-0">
-        <td class="px-6 py-4 font-mono font-bold text-blue-600">${s.id}</td>
-        <td class="px-6 py-4">
-            <div class="flex items-center gap-3">
-                <img src="${img}" class="w-8 h-8 rounded-full object-cover border border-slate-200">
-                <div>
-                    <div class="font-bold text-slate-700 leading-none mb-1">${s.nome || 'Sem Nome'}</div>
-                    <div class="text-[10px] text-slate-400 font-mono italic uppercase">User: ${s.usuario || '---'}</div>
-                </div>
-            </div>
-        </td>
-        <td class="px-6 py-4">
-            <div class="text-sm text-slate-600 font-medium">${s.cartao || '---'}</div>
-            <div class="text-[10px] text-slate-400 uppercase font-bold">CPF: ${s.cpf || '---'}</div>
-        </td>
-        <td class="px-6 py-4">
-            <div class="text-xs font-bold ${saldoReal <= 0 ? 'text-red-500' : 'text-green-600'}">
-                ${formatarMoeda(saldoReal)}
-            </div>
-            <div class="text-[10px] text-slate-400 font-bold uppercase">
-                ${formatarMoeda(limite)}
-            </div>
-        </td>
-        <td class="px-6 py-4 text-right">
-            <div class="flex justify-end items-center gap-1">
-                <button onclick="toggleCartaoFisico(${s.id}, ${isFisico})" 
-                    class="p-2 rounded-lg transition-all ${isFisico ? 'text-blue-600 bg-blue-50' : 'text-slate-300 hover:bg-slate-100'}" 
-                    title="${isFisico ? 'Possui Cartão Físico' : 'Somente Virtual'}">
-                    <i class="fa-solid fa-credit-card"></i>
-                </button>
-
-                <button onclick="prepararEdicaoServidor(${s.id})" class="text-blue-500 hover:bg-blue-50 p-2 rounded-lg transition-all" title="Editar">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                
-                <button onclick="deleteServidor(${s.id})" class="text-red-400 hover:bg-red-50 p-2 rounded-lg transition-all" title="Excluir">
-                    <i class="fa-solid fa-trash-can"></i>
-                </button>
-            </div>
-        </td>
-    </tr>
-`;
-        });
-    } catch (err) {
-        console.error("ERRO SERVIDORES:", err);
-        tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-red-500 font-bold">Erro: ${err.message}</td></tr>`;
+    if (!lista || lista.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-slate-600">Nenhum servidor encontrado.</td></tr>`;
+        return;
     }
+
+    lista.forEach(s => {
+        const limite = parseFloat(s.limite || 0);
+        const gastoTotal = (window.gastosPorCartao && window.gastosPorCartao[s.cartao]) || 0;
+        const saldoReal = limite - gastoTotal;
+        const img = s.imagem_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(s.nome)}&background=random`;
+        const isFisico = s.cartaoFisico === true;
+        // Pega o produto ou exibe "Padrão" caso esteja vazio
+        const produtoRef = s.produto_referencia || 'Nenhum';
+
+        tbody.innerHTML += `
+            <tr class="hover:bg-slate-50/50 transition-colors border-b border-slate-100 last:border-0">
+                <td class="px-6 py-4 font-mono font-bold text-blue-600">${s.id}</td>
+                <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                        <div class="relative group">
+                            <img src="${img}" class="w-12 h-8 rounded-md object-cover border border-slate-200 shadow-sm transition-all group-hover:opacity-50">
+                            
+                            <div class="absolute -top-10 left-0 bg-slate-800 text-white text-[9px] font-bold px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                                ${produtoRef}
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="font-bold text-slate-700 leading-none mb-1">${s.nome || 'Sem Nome'}</div>
+                            <div class="text-[10px] text-slate-600 font-mono italic uppercase">Usuário: ${s.usuario || '---'}</div>
+                        </div>
+                    </div>
+                </td>
+                <td class="px-6 py-4">
+                    <div class="text-sm text-slate-600 font-medium">${s.cartao || '---'}</div>
+                    <div class="text-[10px] text-slate-600 uppercase font-bold">CPF: ${s.cpf || '---'}</div>
+                </td>
+                <td class="px-6 py-4">
+                    <div class="text-xs font-bold ${saldoReal <= 0 ? 'text-red-500' : 'text-green-600'}">
+                        ${formatarMoeda(saldoReal)}
+                    </div>
+                    <div class="text-[10px] text-slate-600 font-bold uppercase">${formatarMoeda(limite)}</div>
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <div class="flex justify-end items-center gap-1">
+                        <button onclick="toggleCartaoFisico(${s.id}, ${isFisico})" class="p-2 rounded-lg transition-all ${isFisico ? 'text-blue-600 bg-blue-50' : 'text-slate-300 hover:bg-slate-100'}">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </button>
+                        <button onclick="prepararEdicaoServidor(${s.id})" class="text-blue-500 hover:bg-blue-50 p-2 rounded-lg transition-all"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button onclick="deleteServidor(${s.id})" class="text-red-400 hover:bg-red-50 p-2 rounded-lg transition-all"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </td>
+            </tr>`;
+    });
+}
+
+// Variável global para armazenar o timer do filtro
+let debounceTimerServidor;
+
+function filtrarServidores() {
+    // Cancela o timer anterior se o usuário continuar digitando
+    clearTimeout(debounceTimerServidor);
+
+    // Define o novo timer de 1 segundo (1000ms)
+    debounceTimerServidor = setTimeout(() => {
+        const termo = document.getElementById('input-busca-servidor').value.toLowerCase();
+        
+        // Verifica se a lista de servidores existe para evitar erros
+        if (!window.listaServidores) return;
+
+        // Filtra a lista com base no nome, CPF, cartão ou produto_referencia
+        const filtrados = window.listaServidores.filter(s => 
+            s.nome?.toLowerCase().includes(termo) || 
+            s.cpf?.toString().includes(termo) || 
+            s.cartao?.toString().includes(termo) ||
+            s.produto_referencia?.toLowerCase().includes(termo) // Adicionado filtro de produto
+        );
+
+        // Atualiza a tabela
+        renderizarTabelaServidores(filtrados);
+    }, 500); // Delay de 1 segundo
 }
 
 async function toggleCartaoFisico(id, statusAtual) {
@@ -3492,22 +3795,60 @@ async function openModalServidor() {
         document.getElementById('form-servidor').reset();
         document.getElementById('servidor-id-edit').value = '';
         
-        // 2. Carrega os produtos para o select antes de mostrar o modal
+        const inputCartao = document.getElementById('serv-cartao');
+        
+        // 2. Lógica para Gerar Próximo Número Sequencial (001, 002...)
+        // Buscamos apenas a coluna 'cartao' de todos os servidores
+        const { data: cartoes, error } = await _supabase
+            .from('servidores')
+            .select('cartao');
+
+        let proximoNumero = 1;
+
+        if (cartoes && cartoes.length > 0) {
+            // Extrai os números, converte para inteiro e acha o maior
+            const numerosValidos = cartoes
+                .map(c => parseInt(c.cartao))
+                .filter(n => !isNaN(n));
+            
+            if (numerosValidos.length > 0) {
+                proximoNumero = Math.max(...numerosValidos) + 1;
+            }
+        }
+
+        // Formata com zeros à esquerda (ex: 3 vira "003")
+        const numeroFormatado = proximoNumero.toString().padStart(3, '0');
+        
+        // Preenche o input e define como readonly inicialmente
+        if (inputCartao) {
+            inputCartao.value = numeroFormatado;
+            inputCartao.readOnly = true;
+            inputCartao.classList.add('bg-slate-50', 'cursor-not-allowed'); // Estilo visual de bloqueado
+            
+            // Adiciona um evento de clique duplo para "liberar" a edição manual se necessário
+            inputCartao.title = "Clique duplo para editar manualmente";
+            inputCartao.ondblclick = function() {
+                this.readOnly = false;
+                this.classList.remove('bg-slate-50', 'cursor-not-allowed');
+                showMsg("Edição manual habilitada", "info");
+            };
+        }
+
+        // 3. Carrega os produtos para o select
         await popularSelectProdutos();
         
-        // 3. Reseta o preview do cartão
+        // 4. Reseta o preview do cartão
         const imgTag = document.getElementById('card-preview-img');
         const placeholder = document.getElementById('card-preview-placeholder');
         if(imgTag) imgTag.classList.add('hidden');
         if(placeholder) placeholder.classList.remove('hidden');
 
-        // 4. Muda o título e exibe
+        // 5. Muda o título e exibe
         document.querySelector('#modal-servidor h3').innerText = "Novo Servidor";
         document.getElementById('modal-servidor').classList.remove('hidden');
         
     } catch (error) {
         console.error("Erro ao abrir modal:", error);
-        // Abre o modal mesmo se der erro nos produtos para não travar o sistema
         document.getElementById('modal-servidor').classList.remove('hidden');
     }
 }
@@ -3518,54 +3859,72 @@ function closeModalServidor() {
 }
 
 async function prepararEdicaoServidor(id) {
-    // 1. Localiza o servidor na memória
-    const s = window.listaServidores.find(item => item.id === id);
-    if (!s) return;
+    console.log("Tentando editar servidor ID:", id);
 
-    // 2. Garante que o select tenha opções antes de tentar selecionar uma
+    const idCorreto = parseInt(id, 10);
+    const s = window.listaServidores.find(item => parseInt(item.id, 10) === idCorreto);
+
+    if (!s) {
+        console.error("ERRO: Servidor não encontrado.");
+        return;
+    }
+
     await popularSelectProdutos();
 
-    // 3. Interface: Abre o modal
     const modal = document.getElementById('modal-servidor');
     if (modal) {
         modal.classList.remove('hidden');
         modal.classList.add('flex');
     }
-    
     document.querySelector('#modal-servidor h3').innerText = "Editar Servidor";
-    
-    // 4. Preenche os campos básicos
+
+    // Preenchimento de campos
     document.getElementById('servidor-id-edit').value = s.id;
-    document.getElementById('serv-nome').value = s.nome;
-    document.getElementById('serv-cpf').value = s.cpf;
-    document.getElementById('serv-cartao').value = s.cartao;
-    document.getElementById('serv-limite').value = s.limite;
+    document.getElementById('serv-nome').value = s.nome || "";
+    document.getElementById('serv-cpf').value = s.cpf || "";
+    document.getElementById('serv-cartao').value = s.cartao || "";
+    document.getElementById('serv-limite').value = s.limite || "";
     document.getElementById('serv-usuario').value = s.usuario || "";
     document.getElementById('serv-senha').value = s.senha || "";
 
-    // 5. SINCRONIZAÇÃO DO MODELO DE CARTÃO
+    // Sincronização do Produto e Thumbnail
     const select = document.getElementById('serv-produto-id');
+    const thumb = document.getElementById('img-thumb-cartao');
+
     if (select) {
-        // Remove espaços extras que podem vir do banco (trim)
-        const referenciaBuscada = s.produto_referencia ? s.produto_referencia.trim() : "";
-        
-        // Tenta selecionar diretamente pelo valor
-        select.value = referenciaBuscada;
+        const referencia = s.produto_referencia ? s.produto_referencia.trim() : "";
+        let encontrada = false;
 
-        // Se ainda assim ficar em branco (o value da option pode ser diferente)
-        if (select.selectedIndex === -1 || select.value === "") {
-            // Varre as opções para encontrar o texto correspondente
-            Array.from(select.options).forEach((option, index) => {
-                if (option.text.trim() === referenciaBuscada || option.value.trim() === referenciaBuscada) {
-                    select.selectedIndex = index;
+        for (let i = 0; i < select.options.length; i++) {
+            const opt = select.options[i];
+            if (opt.text.trim() === referencia) {
+                select.selectedIndex = i;
+                encontrada = true;
+
+                // Atualiza thumbnail
+                const imgUrl = opt.getAttribute('data-image');
+                if (thumb) {
+                    if (imgUrl) {
+                        thumb.src = imgUrl;
+                        thumb.classList.remove('hidden');
+                    } else {
+                        thumb.classList.add('hidden');
+                    }
                 }
-            });
+                break;
+            }
         }
 
-        // 6. Atualiza a imagem do cartão no Modal (Preview)
-        if (typeof atualizarPreviewCard === "function") {
-            atualizarPreviewCard();
+        // Caso não encontre, reseta para a opção padrão e esconde a imagem
+        if (!encontrada) {
+            select.selectedIndex = 0;
+            if (thumb) thumb.classList.add('hidden');
         }
+    }
+
+    // Trigger de atualização visual externa
+    if (typeof atualizarPreviewCard === "function") {
+        atualizarPreviewCard();
     }
 }
 
@@ -3575,45 +3934,59 @@ async function saveNewServidor(event) {
     const idEdit = document.getElementById('servidor-id-edit').value;
     const selectProduto = document.getElementById('serv-produto-id');
     
+    // Captura o estado do switch de Ativo/Inativo
+    const isAtivo = document.getElementById('serv-ativo').checked;
+    
     // Pega a descrição (Texto visível) e a URL da imagem (Value)
-    const descricaoProduto = selectProduto.options[selectProduto.selectedIndex].text;
+    const selectedOption = selectProduto.options[selectProduto.selectedIndex];
+    const descricaoProduto = selectedOption ? selectedOption.text : "";
     const urlImagem = selectProduto.value;
 
-    if (!urlImagem) {
+    if (!urlImagem || descricaoProduto === "Selecione o design...") {
         showMsg("Selecione um modelo de cartão", "error");
         return;
     }
 
-    // Montagem do objeto de dados (Saldo removido daqui)
+    // Montagem do objeto de dados com o campo 'ativo' dinâmico
+    const cpfLimpo = document.getElementById('serv-cpf').value.replace(/\D/g, '');
+    const cartaoLimpo = document.getElementById('serv-cartao').value.replace(/\D/g, '');
+
     const dados = {
-        nome: document.getElementById('serv-nome').value,
-        cpf: document.getElementById('serv-cpf').value,
-        cartao: document.getElementById('serv-cartao').value,
+        nome: document.getElementById('serv-nome').value.trim(),
+        cpf: cpfLimpo, // Salva apenas os números
+        cartao: cartaoLimpo, // Salva apenas os números
         limite: parseFloat(document.getElementById('serv-limite').value) || 0,
-        usuario: document.getElementById('serv-usuario').value,
+        usuario: document.getElementById('serv-usuario').value.trim(),
         senha: document.getElementById('serv-senha').value,
         imagem_url: urlImagem, 
         produto_referencia: descricaoProduto,
-        ativo: true
+        ativo: isAtivo 
     };
 
     let response;
 
-    if (idEdit) {
-        // EDIÇÃO: Apenas atualiza os campos básicos
-        response = await _supabase.from('servidores').update(dados).eq('id', idEdit);
-    } else {
-        // CADASTRO NOVO: Insere os dados sem a coluna saldo
-        response = await _supabase.from('servidores').insert([dados]);
-    }
+    try {
+        if (idEdit) {
+            // EDIÇÃO
+            response = await _supabase.from('servidores').update(dados).eq('id', idEdit);
+        } else {
+            // CADASTRO NOVO
+            response = await _supabase.from('servidores').insert([dados]);
+        }
 
-    if (response.error) {
-        console.error("Erro Supabase:", response.error);
-        showMsg("Erro ao salvar: " + response.error.message, "error");
-    } else {
+        if (response.error) throw response.error;
+
         showMsg(idEdit ? "Servidor atualizado!" : "Servidor cadastrado!", "success");
         closeModalServidor();
-        if (typeof loadServidoresList === "function") loadServidoresList();
+        
+        // Recarrega a lista se a função existir
+        if (typeof loadServidoresList === "function") {
+            loadServidoresList();
+        }
+
+    } catch (error) {
+        console.error("Erro Supabase:", error);
+        showMsg("Erro ao salvar: " + error.message, "error");
     }
 }
 
@@ -3633,7 +4006,7 @@ async function loadProdutosList() {
     const container = document.getElementById('lista-produtos-container');
     if (!container) return;
 
-    container.innerHTML = `<div class="py-10 text-center text-slate-400 italic font-bold uppercase text-[10px] tracking-widest">Carregando produtos...</div>`;
+    container.innerHTML = `<div class="py-10 text-center text-slate-600 italic font-bold uppercase text-[10px] tracking-widest">Carregando produtos...</div>`;
 
     try {
         const { data: produtos, error } = await _supabase.from('produtos').select('*').order('id', { ascending: true });
@@ -3645,7 +4018,7 @@ async function loadProdutosList() {
         window.listaProdutos = produtos || [];
 
         if (window.listaProdutos.length === 0) {
-            container.innerHTML = `<div class="p-8 text-center text-slate-400 border-2 border-dashed rounded-2xl">Nenhum produto cadastrado.</div>`;
+            container.innerHTML = `<div class="p-8 text-center text-slate-600 border-2 border-dashed rounded-2xl">Nenhum produto cadastrado.</div>`;
             return;
         }
 
@@ -3664,7 +4037,7 @@ container.innerHTML = window.listaProdutos.map((p, index) => {
     return `
     <div class="group bg-white hover:bg-slate-50 border border-slate-100 rounded-xl p-2 flex items-center gap-4 transition-all duration-200 shadow-sm relative overflow-visible">
         
-        <span class="text-[10px] font-black text-slate-300 w-8 pl-2">#${p.id}</span>
+        <span class="px-6 py-4 font-mono font-bold text-blue-600">${p.id}</span>
         
         <div class="w-10 h-10 rounded-lg overflow-hidden border border-slate-100 flex-shrink-0">
             <img src="${p.imagem || 'https://placehold.co/100'}" class="w-full h-full object-cover">
@@ -3673,10 +4046,10 @@ container.innerHTML = window.listaProdutos.map((p, index) => {
         <div class="flex-1 min-w-0">
             <h4 class="font-black text-slate-700 text-sm truncate uppercase tracking-tighter">${p.descricao}</h4>
             <div class="flex items-center gap-3">
-                <span class="text-[9px] text-slate-400 flex items-center gap-1 font-black uppercase tracking-widest">
+                <span class="text-[9px] text-slate-600 flex items-center gap-1 font-black uppercase tracking-widest">
                     <i class="fa-solid fa-location-dot text-blue-400"></i> ${p.cidade}
                 </span>
-                <span class="text-[9px] text-slate-400 flex items-center gap-1 font-black uppercase tracking-widest">
+                <span class="text-[9px] text-slate-600 flex items-center gap-1 font-black uppercase tracking-widest">
                     <i class="fa-solid fa-user text-slate-300"></i> ${p.responsavel}
                 </span>
             </div>
@@ -3701,10 +4074,10 @@ container.innerHTML = window.listaProdutos.map((p, index) => {
         </div>
 
         <div class="flex items-center gap-1 pr-2">
-            <button onclick="prepararEdicaoProduto(${p.id})" class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-all">
+            <button onclick="prepararEdicaoProduto(${p.id})" class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-all">
                 <i class="fa-solid fa-pen-to-square"></i>
             </button>
-            <button onclick="deleteProduto(${p.id})" class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all">
+            <button onclick="deleteProduto(${p.id})" class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:text-red-500 hover:bg-red-50 transition-all">
                 <i class="fa-solid fa-trash-can"></i>
             </button>
         </div>
@@ -3753,82 +4126,131 @@ function closeModalProduto() {
 
 
 // 3. Preparar Edição
-async function prepararEdicaoProduto(id) {
-    const p = window.listaProdutos.find(item => item.id === id);
-    if (!p) return;
+async function prepararEdicaoServidor(id) {
+    const s = window.listaServidores.find(item => item.id === id);
+    if (!s) return;
 
-    // 1. Abre o modal PRIMEIRO
-    const modal = document.getElementById('modal-produto');
-    modal.classList.remove('hidden');
-    document.querySelector('#modal-produto h3').innerText = "Editar Produto";
+    await popularSelectProdutos();
+
+    const modal = document.getElementById('modal-servidor');
+    if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
     
-    // 2. Preenche os campos básicos
-    document.getElementById('produto-id-edit').value = p.id || '';
-    document.getElementById('prod-descricao').value = p.descricao || '';
-    document.getElementById('prod-cidade').value = p.cidade || '';
-    document.getElementById('prod-responsavel').value = p.responsavel || '';
-    document.getElementById('prod-contato').value = p.contato || '';
-    document.getElementById('prod-imagem').value = p.imagem || '';
+    document.querySelector('#modal-servidor h3').innerText = "Editar Servidor";
+    
+    document.getElementById('servidor-id-edit').value = s.id;
+    document.getElementById('serv-nome').value = s.nome;
+    document.getElementById('serv-cpf').value = s.cpf;
+    document.getElementById('serv-cartao').value = s.cartao;
+    document.getElementById('serv-limite').value = s.limite;
 
-    // 3. Aguarda o checklist carregar (com tratamento de erro interno)
-    try {
-        await loadBannersNoChecklist();
-
-        // 4. Só marca os checkboxes se o carregamento acima funcionou
-        if (p.banner_ids && Array.isArray(p.banner_ids)) {
-            // Pequeno delay para garantir que o DOM renderizou o innerHTML novo
-            setTimeout(() => {
-                const checkboxes = document.querySelectorAll('.banner-checkbox');
-                checkboxes.forEach(cb => {
-                    if (p.banner_ids.includes(cb.value)) {
-                        cb.checked = true;
-                    }
-                });
-            }, 50); 
+    // --- NOVA LINHA PARA O SWITCH ---
+    document.getElementById('serv-ativo').checked = !!s.ativo;
+    // --------------------------------
+    
+    document.getElementById('serv-usuario').value = s.usuario || "";
+    document.getElementById('serv-senha').value = s.senha || "";
+    
+    const select = document.getElementById('serv-produto-id');
+    if (select && s.imagem_url) {
+        select.value = s.imagem_url;
+        if (typeof atualizarPreviewCard === "function") {
+            atualizarPreviewCard();
         }
-    } catch (err) {
-        console.error("Falha ao preparar checklist:", err);
     }
 }
 
 // 4. Salvar (Insert/Update)
 async function saveNewProduto(event) {
     event.preventDefault();
-    const idEdit = document.getElementById('produto-id-edit').value;
+    const btn = event.submitter; 
+    const originalBtnText = btn.innerHTML;
     
-    // 1. Captura os IDs de todos os banners selecionados no checklist
-    const checkboxes = document.querySelectorAll('.banner-checkbox:checked');
-    const bannersSelecionados = Array.from(checkboxes).map(cb => cb.value);
+    const idEdit = document.getElementById('produto-id-edit').value;
+    const fileInput = document.getElementById('prod-imagem-file');
+    
+    let urlImagemFinal = document.getElementById('prod-imagem-url-hidden')?.value || '';
 
-    // 2. Monta o objeto de dados incluindo a nova coluna banner_ids
-    const dados = {
-        descricao: document.getElementById('prod-descricao').value,
-        cidade: document.getElementById('prod-cidade').value,
-        responsavel: document.getElementById('prod-responsavel').value,
-        contato: document.getElementById('prod-contato').value,
-        imagem: document.getElementById('prod-imagem').value,
-        banner_ids: bannersSelecionados // Salva como array de IDs (text[])
-    };
+    try {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
 
-    let error;
-    if (idEdit) {
-        // Edição: Atualiza o registro existente
-        const res = await _supabase.from('produtos').update(dados).eq('id', idEdit);
-        error = res.error;
-    } else {
-        // Novo: Insere um novo registro
-        const res = await _supabase.from('produtos').insert([dados]);
-        error = res.error;
-    }
+        // --- 1. LÓGICA DE UPLOAD (STORAGE) ---
+        if (fileInput && fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const fileExt = file.name.split('.').pop();
+            const fileName = `${Math.random().toString(36).substring(2)}_${Date.now()}.${fileExt}`;
+            const filePath = `capas/${fileName}`;
 
-    // 3. Feedback ao usuário
-    if (error) {
-        console.error("Erro Supabase:", error);
-        showMsg("Erro ao salvar produto", "error");
-    } else {
-        showMsg("Produto salvo com sucesso!", "success");
+            const { data: uploadData, error: uploadError } = await _supabase.storage
+                .from('produtos')
+                .upload(filePath, file);
+
+            if (uploadError) throw new Error("Erro no upload da imagem: " + uploadError.message);
+
+            const { data: publicUrlData } = _supabase.storage
+                .from('produtos')
+                .getPublicUrl(filePath);
+            
+            urlImagemFinal = publicUrlData.publicUrl;
+        }
+
+        // --- 2. COLETA DOS BANNERS SELECIONADOS ---
+        // Buscamos todos os checkboxes marcados dentro do container de banners
+        const checkboxes = document.querySelectorAll('.banner-checkbox:checked');
+        
+        // Convertemos os valores (que vêm como string do HTML) para Números (inteiros)
+        // Isso é crucial para o campo banner_ids (int4[]) do PostgreSQL
+        const bannersSelecionados = Array.from(checkboxes).map(cb => parseInt(cb.value, 10));
+
+        console.log("Banners sendo enviados:", bannersSelecionados);
+
+        // --- 3. MONTAGEM DOS DADOS ---
+        const dados = {
+            descricao: document.getElementById('prod-descricao').value,
+            cidade: document.getElementById('prod-cidade').value,
+            responsavel: document.getElementById('prod-responsavel').value,
+            contato: document.getElementById('prod-contato').value,
+            imagem: urlImagemFinal,
+            banner_ids: bannersSelecionados // Novo campo adicionado aqui
+        };
+
+        // --- 4. PERSISTÊNCIA NO BANCO (DATABASE) ---
+        let res;
+        if (idEdit) {
+            // No Update, o ID vai no .eq(), não dentro de dados (para evitar erro de duplicate key)
+            res = await _supabase.from('produtos').update(dados).eq('id', idEdit);
+        } else {
+            // No Insert, o banco gera o ID sequencial sozinho (Sequence)
+            res = await _supabase.from('produtos').insert([dados]);
+        }
+
+        if (res.error) throw res.error;
+
+        // Sucesso
+        showMsg(idEdit ? "Produto atualizado!" : "Produto cadastrado!", "success");
         closeModalProduto();
-        loadProdutosList();
+        if (typeof loadProdutosList === "function") loadProdutosList();
+
+    } catch (error) {
+        console.error("Erro completo:", error);
+        showMsg(error.message || "Erro ao salvar produto", "error");
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalBtnText;
+    }
+}
+
+function updateFileName(input) {
+    const previewImg = document.getElementById('img-mini-preview');
+    const previewContainer = document.getElementById('upload-preview');
+    
+    if (input.files && input.files[0]) {
+        const url = URL.createObjectURL(input.files[0]);
+        if (previewImg) previewImg.src = url;
+        if (previewContainer) previewContainer.classList.remove('hidden');
     }
 }
 
@@ -3921,7 +4343,7 @@ async function loadConciliacao() {
         <div class="col-span-full py-12 text-center">
             <div class="flex flex-col items-center gap-3">
                 <i class="fa-solid fa-circle-notch animate-spin text-blue-500 text-2xl"></i>
-                <span class="text-slate-400 font-medium italic text-[11px] uppercase tracking-widest">Sincronizando base de dados...</span>
+                <span class="text-slate-600 font-medium italic text-[11px] uppercase tracking-widest">Sincronizando base de dados...</span>
             </div>
         </div>`;
 
@@ -3962,7 +4384,7 @@ async function loadConciliacao() {
         container.innerHTML = '';
 
         if (!transacoes || transacoes.length === 0) {
-            container.innerHTML = `<div class="col-span-full py-10 text-center bg-slate-50 rounded-2xl border border-dashed border-slate-200 text-[10px] text-slate-400 uppercase tracking-widest">Nenhuma transação encontrada</div>`;
+            container.innerHTML = `<div class="col-span-full py-10 text-center bg-slate-50 rounded-2xl border border-dashed border-slate-200 text-[10px] text-slate-600 uppercase tracking-widest">Nenhuma transação encontrada</div>`;
         } else {
             transacoes.forEach(t => {
                 const vBruto = parseFloat(t.valor || 0);
@@ -4029,7 +4451,7 @@ async function loadConciliacao() {
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
             
             <div class="flex items-center gap-3 lg:w-1/3">
-                <div class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 shrink-0">
+                <div class="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-600 shrink-0">
                     <i class="fa-solid ${icone} text-[10px] ${ehAvulsa ? 'text-blue-500' : (ehManual ? 'text-amber-500' : '')}"></i>
                 </div>
                 <div class="min-w-0">
@@ -4658,7 +5080,7 @@ function renderizarCards2(lista) {
     // Botão de Detalhes (Sempre Visível)
     const btnDetalhes = `
         <button onclick='abrirDetalhes(${idsJson}, "${g.lojista}", "${g.dataPagamento}")' 
-            class="w-11 h-11 flex items-center justify-center rounded-2xl bg-white border border-slate-100 text-slate-400 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-100 transition-all group/btn" title="Ver Transações">
+            class="w-11 h-11 flex items-center justify-center rounded-2xl bg-white border border-slate-100 text-slate-600 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-100 transition-all group/btn" title="Ver Transações">
             <i class="fa-solid fa-list-ul text-xs group-hover/btn:scale-110 transition-transform"></i>
         </button>
     `;
@@ -4695,12 +5117,12 @@ function renderizarCards2(lista) {
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     
                     <div class="flex items-start gap-4 md:w-1/4">
-                        <div class="w-12 h-12 rounded-[18px] bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 group-hover:text-blue-500 transition-colors shrink-0">
+                        <div class="w-12 h-12 rounded-[18px] bg-slate-50 flex items-center justify-center text-slate-600 group-hover:bg-blue-50 group-hover:text-blue-500 transition-colors shrink-0">
                             <i class="fa-solid fa-store text-sm"></i>
                         </div>
                         <div class="min-w-0">
                             <h4 class="text-[12px] font-black text-slate-800 uppercase truncate mb-1 leading-tight">${g.lojista}</h4>
-                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
+                            <p class="text-[9px] font-bold text-slate-600 uppercase tracking-tighter">
                                 ${g.minVenda.toLocaleDateString('pt-BR')} <i class="fa-solid fa-arrow-right mx-1 text-[8px] opacity-30"></i> ${g.maxVenda.toLocaleDateString('pt-BR')}
                             </p>
                         </div>
@@ -4935,7 +5357,7 @@ function renderizarCardsRepasses(lista) {
     if (lista.length === 0) {
         container.innerHTML = `
             <div class="bg-slate-50 border-2 border-dashed border-slate-200 rounded-[32px] py-16 text-center">
-                <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest">Nenhum repasse encontrado.</p>
+                <p class="text-slate-600 text-[10px] font-black uppercase tracking-widest">Nenhum repasse encontrado.</p>
             </div>`;
         return;
     }
@@ -4949,11 +5371,11 @@ function renderizarCardsRepasses(lista) {
                     
                     <div class="flex items-center justify-between md:justify-start md:gap-4 md:w-1/4">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 shrink-0">
+                            <div class="w-10 h-10 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-600 shrink-0">
                                 <i class="fa-solid fa-calendar-check text-xs"></i>
                             </div>
                             <div class="min-w-0">
-                                <h4 class="text-[9px] font-black text-slate-400 uppercase mb-0.5 tracking-widest">de / até:</h4>
+                                <h4 class="text-[9px] font-black text-slate-600 uppercase mb-0.5 tracking-widest">de / até:</h4>
                                 <p class="text-[11px] font-extrabold text-slate-700 uppercase">
                                     ${g.minVenda.toLocaleDateString('pt-BR')} <span class="text-slate-300 mx-0.5">/</span> ${g.maxVenda.toLocaleDateString('pt-BR')}
                                 </p>
@@ -4970,7 +5392,7 @@ function renderizarCardsRepasses(lista) {
 
                     <div class="flex flex-1 items-center justify-around bg-slate-50/50 rounded-[24px] px-4 py-4 border border-slate-50">
                         <div class="text-center">
-                            <p class="text-[7px] font-black text-slate-400 uppercase mb-1 tracking-widest">Bruto</p>
+                            <p class="text-[7px] font-black text-slate-600 uppercase mb-1 tracking-widest">Bruto</p>
                             <p class="text-[11px] font-bold text-slate-500 tabular-nums">${money(g.totalBruto)}</p>
                         </div>
                         <div class="w-px h-8 bg-slate-200"></div>
@@ -4982,7 +5404,7 @@ function renderizarCardsRepasses(lista) {
 
                     <div class="flex flex-col md:items-end gap-3 md:min-w-[210px]">
                         <div class="hidden md:flex items-center gap-2">
-                            <p class="text-[8px] font-black text-slate-400 uppercase">Pagamento:</p>
+                            <p class="text-[8px] font-black text-slate-600 uppercase">Pagamento:</p>
                             <span class="bg-white border border-slate-100 text-slate-600 px-3 py-1 rounded-xl text-[10px] font-black shadow-sm">
                                 ${new Date(g.dataPagamento + "T12:00:00").toLocaleDateString('pt-BR')}
                             </span>
@@ -4990,7 +5412,7 @@ function renderizarCardsRepasses(lista) {
                         
                         <div class="flex gap-2 w-full">
                             <button onclick='abrirDetalhes(${idsJson}, "Meu Repasse", "${g.dataPagamento}")' 
-                                class="w-12 h-12 md:w-10 md:h-10 flex items-center justify-center rounded-2xl bg-white text-slate-400 hover:bg-blue-50 hover:text-blue-500 border border-slate-100 transition-all shadow-sm">
+                                class="w-12 h-12 md:w-10 md:h-10 flex items-center justify-center rounded-2xl bg-white text-slate-600 hover:bg-blue-50 hover:text-blue-500 border border-slate-100 transition-all shadow-sm">
                                 <i class="fa-solid fa-list-ul text-xs"></i>
                             </button>
                             ${g.comprovante ? `
@@ -4998,7 +5420,7 @@ function renderizarCardsRepasses(lista) {
                                     <i class="fa-solid fa-file-invoice-dollar"></i> Recibo
                                 </a>
                             ` : `
-                                <div class="flex-1 bg-slate-100 text-slate-400 px-4 py-3 md:py-2 rounded-2xl text-[10px] font-black flex items-center justify-center gap-2 uppercase tracking-tighter">
+                                <div class="flex-1 bg-slate-100 text-slate-600 px-4 py-3 md:py-2 rounded-2xl text-[10px] font-black flex items-center justify-center gap-2 uppercase tracking-tighter">
                                     <i class="fa-solid fa-clock"></i> Pendente
                                 </div>
                             `}
@@ -5076,12 +5498,12 @@ async function abrirDetalhes(ids, lojista, dataPag) {
             return `
                 <div class="flex items-center justify-between p-4 bg-white border border-slate-100 rounded-[20px] shadow-sm">
                     <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center text-[10px] text-slate-400 font-bold">
+                        <div class="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center text-[10px] text-slate-600 font-bold">
                             <i class="fa-solid fa-tag"></i>
                         </div>
                         <div>
                             <p class="text-[11px] font-black text-slate-700 uppercase leading-none mb-1">Venda ${t.id}</p>
-                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">${dataExibicao}</p>
+                            <p class="text-[9px] font-bold text-slate-600 uppercase tracking-tighter">${dataExibicao}</p>
                         </div>
                     </div>
                     <div class="text-right">
@@ -5447,14 +5869,22 @@ function fecharModalAviso() {
 
 function recolherBannerCliente() {
     const modal = document.getElementById('modal-banner-cliente');
-    if (modal) {
-        // Faz o banner subir novamente
+    // Seleciona a div interna que contém a sombra e a borda
+    const container = modal ? modal.querySelector('div') : null;
+
+    if (modal && container) {
+        // 1. Faz o banner subir
         modal.classList.remove('translate-y-0');
         modal.classList.add('-translate-y-full');
         
+        // 2. Remove as classes de sombra e borda após o tempo da animação (500ms)
+        setTimeout(() => {
+            container.classList.remove('shadow-2xl', 'border', 'border-slate-100');
+        }, 500);
+        
         console.log("Banner recolhido pelo usuário");
     } else {
-        console.error("Elemento modal-banner-cliente não encontrado");
+        console.error("Elemento modal-banner-cliente ou seu container não encontrados");
     }
 }
 
@@ -5474,7 +5904,7 @@ async function loadBannersNoChecklist() {
         if (error) throw error;
 
         if (!banners || banners.length === 0) {
-            container.innerHTML = `<p class="text-[10px] text-slate-400 text-center py-4 italic">Nenhum banner ativo disponível.</p>`;
+            container.innerHTML = `<p class="text-[10px] text-slate-600 text-center py-4 italic">Nenhum banner ativo disponível.</p>`;
             return;
         }
 
@@ -5488,7 +5918,7 @@ async function loadBannersNoChecklist() {
                            class="banner-checkbox w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer">
                     <div class="flex flex-col leading-tight">
                         <span class="text-xs font-bold text-slate-700">Banner ${index + 1}</span>
-                        <span class="text-[9px] text-slate-400 group-hover:text-blue-500 transition-colors uppercase">
+                        <span class="text-[9px] text-slate-600 group-hover:text-blue-500 transition-colors uppercase">
                             ${tituloCurto}
                         </span>
                     </div>
@@ -5502,6 +5932,109 @@ async function loadBannersNoChecklist() {
     }
 }
 
+document.getElementById('loja-cnpj').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, '');
+    
+    // CPF (11 dígitos) ou CNPJ (14 dígitos)
+    if (value.length <= 11) {
+        // Formata CPF: 000.000.000-00
+        value = value.replace(/(\d{3})(\d)/, '$1.$2');
+        value = value.replace(/(\d{3})(\d)/, '$1.$2');
+        value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    } else {
+        // Formata CNPJ: 00.000.000/0000-00
+        value = value.replace(/^(\d{2})(\d)/, '$1.$2');
+        value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+        value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
+        value = value.replace(/(\d{4})(\d)/, '$1-$2');
+    }
+    e.target.value = value;
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cpfInput = document.getElementById('serv-cpf');
+
+    if (cpfInput) {
+        cpfInput.addEventListener('input', (e) => {
+            let valor = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            
+            // Aplica a máscara: 000.000.000-00
+            valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+            valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+            valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            
+            e.target.value = valor;
+        });
+    }
+});
+
+function abrirModalContrato(id) {
+    document.getElementById('contrato-lojista-id').value = id;
+    document.getElementById('nome-arquivo-contrato').innerText = "Clique para selecionar o PDF ou Imagem";
+    document.getElementById('input-arquivo-contrato').value = "";
+    document.getElementById('modal-contrato').classList.remove('hidden');
+}
+
+function fecharModalContrato() {
+    document.getElementById('modal-contrato').classList.add('hidden');
+}
+
+function validarArquivo(input) {
+    if (input.files.length > 0) {
+        document.getElementById('nome-arquivo-contrato').innerText = input.files[0].name;
+    }
+}
+
+async function salvarContratoSupabase() {
+    const idLojista = document.getElementById('contrato-lojista-id').value;
+    const fileInput = document.getElementById('input-arquivo-contrato');
+    const btn = document.getElementById('btn-salvar-contrato');
+
+    if (fileInput.files.length === 0) return showMsg("Selecione um arquivo!", "error");
+
+    const file = fileInput.files[0];
+    const fileExt = file.name.split('.').pop();
+    const fileName = `contrato_${idLojista}_${Date.now()}.${fileExt}`;
+    const filePath = `${fileName}`; // Pasta raiz do bucket 'contratos'
+
+    try {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Subindo...';
+
+        // 1. Upload para o Bucket 'contratos'
+        const { data: uploadData, error: uploadError } = await _supabase.storage
+            .from('contratos')
+            .upload(filePath, file);
+
+        if (uploadError) throw uploadError;
+
+        // 2. Pegar URL Pública
+        const { data: publicUrlData } = _supabase.storage
+            .from('contratos')
+            .getPublicUrl(filePath);
+
+        const urlContrato = publicUrlData.publicUrl;
+
+        // 3. Atualizar a tabela 'lojistas' na coluna 'contrato_url'
+        const { error: dbError } = await _supabase
+            .from('lojistas')
+            .update({ contrato_url: urlContrato })
+            .eq('id', idLojista);
+
+        if (dbError) throw dbError;
+
+        showMsg("Contrato armazenado com sucesso!", "success");
+        fecharModalContrato();
+        if (typeof loadLojistasList === "function") loadLojistasList();
+
+    } catch (err) {
+        console.error(err);
+        showMsg("Erro ao salvar contrato: " + err.message, "error");
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Finalizar Upload';
+    }
+}
 
 
 </script>
